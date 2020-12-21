@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_lr_padding">15dp</dimen>
+    <dimen name="common_lr_margin">15dp</dimen>
+    <dimen name="common_line_spacing_extra">4dp</dimen>
+    <dimen name="common_line_spacing_extra_small">2dp</dimen>
+    <dimen name="common_divider">0.5dp</dimen>
+    <dimen name="common_setting_header_height">56dp</dimen>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TypefaceTextView">
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="PressedConstraintLayout">
+        <!-- 左上右下的圆角 -->
+        <attr name="pcl_corner_radius" format="dimension" />
+        <!-- 左上的圆角 -->
+        <attr name="pcl_corner_radius_lt" format="dimension" />
+        <!-- 左下的圆角 -->
+        <attr name="pcl_corner_radius_lb" format="dimension" />
+        <!-- 右上的圆角 -->
+        <attr name="pcl_corner_radius_rt" format="dimension" />
+        <!-- 右下的圆角 -->
+        <attr name="pcl_corner_radius_rb" format="dimension" />
+        <!-- 阴影 -->
+        <attr name="pcl_shadow_radius" format="dimension" />
+        <!-- ShadowLayout的背景颜色 -->
+        <attr name="pcl_bg_color" format="color" />
+        <!-- ShadowLayout按下的背景颜色 -->
+        <attr name="pcl_press_bg_color" format="color" />
+        <!-- 是否开启按下改变背景颜色 -->
+        <attr name="pcl_enable_press" format="boolean" />
+    </declare-styleable>
+</resources>

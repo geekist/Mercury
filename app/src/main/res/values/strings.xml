@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mercury</string>
+
+    <string name="app_name_version">%s version: %s </string>
+    <string name="text_logo">一花一世界 一笑一尘埃</string>
+
 </resources>

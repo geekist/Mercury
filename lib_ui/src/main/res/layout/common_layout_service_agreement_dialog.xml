@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ytech.ui.widget.PressedConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:pcl_bg_color="@color/backgroundPanel"
+    app:pcl_corner_radius="13dp"
+    app:pcl_enable_press="false"
+    tools:layout_marginEnd="56.25dp"
+    tools:layout_marginStart="56.25dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mTvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="服务协议"
+        android:textColor="@color/colorGray111"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mTvContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:lineSpacingExtra="@dimen/common_line_spacing_extra_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTvTitle"
+        tools:text="请你务必审慎阅读、充分理解“服务协议”各条款，包括但不限于：为了向你提供即时通讯、内容分享等服务，我们需要收集你的设备信息、操作日志等个人信息。你可阅读了解详细信息。如你同意，请点击“同意”开始接受我们的服务。" />
+
+    <View
+        android:id="@+id/mDivider0"
+        style="@style/HorizontalDivider"
+        android:layout_width="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTvContent" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/mTvCancel"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="暂不使用"
+        android:textColor="@color/colorGray111"
+        android:textSize="15sp"
+        app:bl_ripple_color="@color/black_2"
+        app:bl_ripple_enable="true"
+        app:bl_solid_color="@color/backgroundPanel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mDivider1"
+        app:layout_constraintTop_toBottomOf="@+id/mDivider0"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/mDivider1"
+        android:layout_width="@dimen/common_divider"
+        android:layout_height="0dp"
+        android:background="@color/dark05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mDivider0" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/mTvConfirm"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="确认"
+        android:textColor="#077DF6"
+        android:textSize="14sp"
+        app:bl_ripple_color="@color/black_2"
+        app:bl_ripple_enable="true"
+        app:bl_solid_color="@color/backgroundPanel"
+        app:layout_constraintBottom_toBottomOf="@+id/mTvCancel"
+        app:layout_constraintLeft_toRightOf="@+id/mDivider1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mTvCancel" />
+</com.ytech.ui.widget.PressedConstraintLayout>

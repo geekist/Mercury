@@ -1,0 +1,170 @@
+ext {
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0.2"
+    ]
+
+    version = [
+            appcompatVersion        : "1.2.0",
+            multidexVersion         : "1.0.3",
+
+            materialVersion         : "1.2.1",
+            androidSupportSdkVersion: "28.0.0",
+            rxLifecycle2SdkVersion  : "2.0.1",
+            rxLifecycle3SdkVersion  : "3.0.0",
+            espressoSdkVersion      : "2.2.2",
+            coreKtxVersion          : "1.3.2",
+
+            constraintlayoutVersion : "2.0.4",
+
+            //retrofit
+            retrofit2Version        : "retrofit2Version",
+            retrofit2rxJava2Version : "2.9.0",
+
+            permissionxVersion      : "1.4.0",
+
+            xpopupVersion           : "2.2.5",
+            backgroundLibraryVersion: "1.6.5",
+    ]
+
+    dependencies = [
+            // Appcompat or support
+            "appcompat"                            : "androidx.appcompat:appcompat:${version.appcompatVersion}",
+            "multidex"                             : "com.android.support:multidex:${version.multidexVersion}",
+
+            //material design
+            "material"                             : "com.google.android.material:material:${version.materialVersion}",
+
+            //androidx jetPack UI
+            "cardview"                             : "androidx.cardview:cardview:${version.supportLibraryVersion}",
+            "recyclerview"                         : "androidx.recyclerview:recyclerview:${version.supportLibraryVersion}",
+            "constraintlayout"                     : "androidx.constraintlayout:constraintlayout:${version.constraintlayoutVersion}",
+
+            //kotlin
+            "core-ktx"                             : "androidx.core:core-ktx:${version.coreKtxVersion}",
+
+            //PermissionX
+            "permissionx"                          : "com.permissionx.guolindev:permissionx:${version.permissionxVersion}",
+
+            //
+            "xpopup"                               : "com.lxj:xpopup:${version.xpopupVersion}",
+
+            "backgroundLibrary"                     : "com.noober.background:core:${version.backgroundLibraryVersion}",
+
+
+            // test
+            "junit"                                : "junit:junit:4.12",
+            "test.ext"                             : "androidx.test.ext:junit:1.1.2",
+            "testRunner"                           : 'androidx.test:runner:1.1.0-alpha4',
+            "AndroidJUnitRunner"                   : "android.support.test.runner.AndroidJUnitRunner",
+            "espresso-core"                        : "androidx.test.espresso:espresso-core:3.3.0",
+
+            // router
+            "arouter-api"                          : 'com.alibaba:arouter-api:1.5.0',
+            "arouter-compiler"                     : 'com.alibaba:arouter-compiler:1.2.2',
+
+            // Fragment管理
+            "fragmentation-core"                   : "me.yokeyword:fragmentationx-core:1.0.1",
+            "fragmentation-swipeback"              : "me.yokeyword:fragmentationx-swipeback:1.0.1",
+
+            //event bus
+            "eventbus"                             : "org.greenrobot:eventbus:3.1.1",
+
+            //retrofit
+            "retrofit2"                            : "com.squareup.retrofit2:retrofit:${version["retrofit2Version"]}",
+            "retrofit2:adapter-rxjava2"            : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofit2rxJava2Version"]}",
+            "retrofit2:converter-gson"             : "com.squareup.retrofit2:converter-gson:${version["retrofit2rxJava2Version"]}",
+            "okhttp3LoggerInterceptor"             : 'com.squareup.okhttp3:logging-interceptor:3.4.1',
+
+            // OkGo
+            "okgo"                                 : "com.lzy.net:okgo:3.0.4",
+            "okrx2"                                : "com.lzy.net:okrx2:2.0.2",
+
+            // rx2
+            "rxkotlin"                             : "io.reactivex.rxjava2:rxkotlin:2.3.0",
+            "rxandroid2"                           : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            "rxjava2"                              : "io.reactivex.rxjava2:rxjava:2.2.7",
+            "rxlifecycle3-android-lifecycle-kotlin": "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:${version["rxLifecycle3SdkVersion"]}",
+
+            // RecyclerView适配器
+            "recyclerview-adapter"                 : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46',
+            "super-textview"                       : 'com.github.chenBingX:SuperTextView:3.1.5',
+
+            // 权限请求库
+            // "and-permissions"                      : 'com.yanzhenjie.permission:x:2.0.1',
+            "and-permissions"                      : 'com.yanzhenjie:permission:2.0.3',
+
+            // 沉浸式状态栏
+            "immersion-bar"                        : "com.gyf.immersionbar:immersionbar:2.3.3",
+
+            // ImageLoader
+            "sketch"                               : "me.panpf:sketch:2.7.0",
+            "sketch-gif"                           : "me.panpf:sketch-gif:2.7.0",
+
+            // tools
+            "gson"                                 : "com.google.code.gson:gson:2.8.5",
+
+            // 今日头条屏幕适配
+            "autosize"                             : 'me.jessyan:autosize:1.1.2',
+
+
+
+            "toast"                                : 'com.hjq:toast:8.0',
+            "flyco-tab-layout"                     : 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar',
+            "view-animator"                        : 'com.github.florent37:viewanimator:1.1.0',
+
+            "indefinitepagerindicator"             : 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.10',
+            "page-indicator"                       : 'com.pacioianu.david:ink-page-indicator:1.3.0',
+
+            "smart-refresh-layout"                 : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0',
+            "recyclerview-pager"                   : 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2@aar',
+            "convenientbanner"                     : 'com.bigkoo:convenientbanner:2.1.5',
+            "recyclerview-divider"                 : 'com.yqritc:recyclerview-flexibledivider:1.4.0',
+            "android-picker"                       : 'com.contrarywind:Android-PickerView:4.1.9',
+            "compressor"                           : 'id.zelory:compressor:2.1.0',
+            "android-cropper"                      : 'com.theartofdev.edmodo:android-image-cropper:2.8.+',
+            "cropiwa"                              : 'com.steelkiwi:cropiwa:1.0.3',
+            "flow-layout"                          : 'com.nex3z:flow-layout:1.2.4',
+
+            // 七牛sdk
+            "qiniu"                                : 'com.qiniu:qiniu-android-sdk:7.3.15',
+            "jz-video-player"                      : 'cn.jzvd:jiaozivideoplayer:7.0.1',
+            "gsy-video-player"                     : 'com.shuyu:gsyVideoPlayer-java:7.0.1',
+            "gsy-video-player-exo"                 : 'com.shuyu:GSYVideoPlayer-exo2:7.0.1',
+            "android-ffmpeg"                       : 'nl.bravobit:android-ffmpeg:1.1.1',
+            "agentweb"                             : 'com.just.agentweb:agentweb:4.1.2',
+            "SwipeDelMenuLayout"                   : 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0',
+            "ExpandableTextView"                   : 'com.github.MZCretin:ExpandableTextView:v1.6.0',
+            //友盟统计
+            "umCommon"                             : 'com.umeng.sdk:common:1.5.1',
+            "umUtdid"                              : 'com.umeng.sdk:utdid:1.1.5.3',
+            "umAnalytics"                          : 'com.umeng.sdk:analytics:7.5.0',
+            //友盟社会化分享
+            "umShareCore"                          : 'com.umeng.sdk:share-core:6.9.2',
+            "umShareQQ"                            : 'com.umeng.sdk:share-qq:6.9.2',
+            "umShareWechat"                        : 'com.umeng.sdk:share-wechat:6.9.2',
+            "umShareSina"                          : 'com.umeng.sdk:share-sina:6.9.2',
+            // 极光推送
+            "jpush"                                : 'cn.jiguang.sdk:jpush:3.3.2',
+            "jpushCore"                            : 'cn.jiguang.sdk:jcore:2.1.0',
+            // behavior
+            "appbarspring"                         : 'com.github.todou:appbarspring:1.0.9',
+            "indexablerecyclerview"                : 'me.yokeyword:indexablerecyclerview:1.3.0',
+            // "realtimeblurview"                     : 'com.github.mmin18:realtimeblurview:1.2.1',
+            "calendarview"                         : 'com.necer.ncalendar:ncalendar:4.4.1',
+
+            // 高德地图
+            "gd-map2d"                             : 'com.amap.api:map2d:5.2.0',
+            "gd-map3d"                             : 'com.amap.api:3dmap:6.9.2',
+            "gd-location"                          : 'com.amap.api:location:3.3.0',
+            "gd-search"                            : 'com.amap.api:search:5.0.0',
+            "card-view"                            : 'io.github.meetsl:SCardView:1.1',
+            "ShadowLayout"                         : 'com.github.lihangleo2:ShadowLayout:2.1.5',
+            "vercodeedittext"                      : 'com.justkiddingbaby:vercodeedittext:1.1.0',
+            "flexbox"                              : 'com.google.android:flexbox:2.0.1',
+    ]
+}

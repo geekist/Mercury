@@ -1,0 +1,86 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--在无需多点触控的页面上，建议关闭多点触控-->
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+    </style>
+
+    <style name="AppTheme.Launcher" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/ic_splash_bg</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <!--<item name="android:navigationBarColor" tools:targetApi="lollipop">@color/black_6</item>-->
+    </style>
+
+    <style name="HorizontalDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_divider</item>
+        <item name="android:background">@color/dark05</item>
+    </style>
+
+    <style name="Divider_10dp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">10dp</item>
+    </style>
+
+    <style name="HorizontalDivider_Margin" parent="HorizontalDivider">
+        <item name="android:layout_marginStart">@dimen/common_lr_margin</item>
+        <item name="android:layout_marginEnd">@dimen/common_lr_margin</item>
+    </style>
+
+    <style name="HorizontalDivider_Start_Margin" parent="HorizontalDivider">
+        <item name="android:layout_marginStart">@dimen/common_lr_margin</item>
+    </style>
+
+    <style name="HorizontalDivider_End_Margin" parent="HorizontalDivider">
+        <item name="android:layout_marginEnd">@dimen/common_lr_margin</item>
+    </style>
+
+    <style name="Layout_Margin_Start_End">
+        <item name="android:layout_marginStart">@dimen/common_lr_margin</item>
+        <item name="android:layout_marginEnd">@dimen/common_lr_margin</item>
+    </style>
+
+    <style name="VerticalDivider">
+        <item name="android:layout_width">@dimen/common_divider</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark05</item>
+    </style>
+
+    <style name="TextView_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- textColor #333 textSize 14sp -->
+    <style name="TextView_c_333_s_14" parent="TextView_Style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorGray333</item>
+    </style>
+
+    <!-- textColor #333 textSize 16sp -->
+    <style name="TextView_c_333_s_15" parent="TextView_Style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorGray333</item>
+    </style>
+
+    <!-- textColor #333 textSize 16sp -->
+    <style name="TextView_c_333_s_16" parent="TextView_Style">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorGray333</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay.Dark" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+</resources>

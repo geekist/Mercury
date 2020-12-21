@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#43484C</color>
+    <color name="colorPrimaryDark">#43484C</color>
+    <color name="colorAccent">#31D6D6</color>
+
+    <color name="colorPrimary_6">#66e53935</color>
+
+    <color name="white_title">#F9F9F9</color>
+    <color name="colorGray999">#999999</color>
+    <color name="colorGray666">#666666</color>
+    <color name="colorGray111">#111111</color>
+    <color name="colorGray14">#141414</color>
+    <color name="colorGray5f">#5f5f5f</color>
+    <color name="colorGray333">#333333</color>
+    <color name="colorGray444">#444444</color>
+    <color name="colorGray03">#030303</color>
+    <color name="colorGray4a">#4a4a4a</color>
+    <color name="colorGrayccc">#cccccc</color>
+
+    <color name="textColorB5">#B5B5B5</color>
+    <color name="textColorCA">#CACACA</color>
+    <color name="textColor4A">#4A4A4A</color>
+    <color name="textColor9B">#9B9B9B</color>
+
+    <!-- 顶部控件背景色 -->
+    <color name="dark01">#43484C</color>
+    <!-- 标题文字颜色、主要文本颜色、icon -->
+    <color name="dark02">#030303</color>
+    <!-- 次要文本颜色、icon -->
+    <color name="dark03">#666666</color>
+    <color name="dark04">#B0B1BB</color>
+    <!-- 页面背景色、分割线颜色 -->
+    <!--<color name="dark05">#B5B5B5</color>-->
+    <!--<color name="dark05">#dfdfdf</color>-->
+    <color name="dark05">#f5f5f5</color>
+    <!-- 解释性文本颜色、icon、弹窗标题分割线 -->
+    <color name="dark06">#B5B5B5</color>
+
+    <color name="colorGrayccc_3">#33cccccc</color>
+    <color name="colorGrayccc_6">#66cccccc</color>
+    <color name="colorGrayccc_9">#99cccccc</color>
+
+    <color name="text_disable">#b2b2b2</color>
+    <color name="text_disable1">#ccd2d2</color>
+
+    <color name="background_disable">#b6c2c2</color>
+    <color name="background_disable1">#dfdfdf</color>
+    <color name="background_disable2">#BACBF8</color>
+
+    <color name="color_btn_disable">#b4b4b4</color>
+    <color name="white">#ffffff</color>
+    <color name="white_3">#33ffffff</color>
+    <color name="white_6">#66ffffff</color>
+    <color name="white_9">#99ffffff</color>
+    <color name="white_c">#ccffffff</color>
+    <color name="black">#000000</color>
+    <color name="text_black">#010101</color>
+    <color name="black_2">#22000000</color>
+    <color name="black_3">#33000000</color>
+    <color name="black_6">#66000000</color>
+    <color name="black_9">#99000000</color>
+
+    <color name="action_item_solid">#55000000</color>
+
+    <color name="split">#eeeeee</color>
+    <!--<color name="backgroundColor">#f5f5f5</color>-->
+    <color name="backgroundColor">#fafcfc</color>
+    <color name="backgroundPanel">#fefefe</color>
+    <color name="background_f8">#f8f8f8</color>
+    <color name="transparent">#00000000</color>
+    <color name="del_red">#FF2E2D</color>
+    <color name="del_red_333">#33FF6464</color>
+    <color name="color_salmon">#f58668</color>
+    <color name="orange">#EF982F</color>
+
+    <color name="primary_blue">#336EB2</color>
+    
+    <color name="cmn_ui_primary_color">#31D6D6</color>
+    <color name="cmn_ui_primary_color_dark">#67B2AB</color>
+    <color name="cmn_ui_primary_color_disable">#998DDCD6</color>
+    <color name="cmn_ui_primary_color_alpha33">#5531D6D6</color>
+    <color name="cmn_ui_primary_color_alpha50">#8831D6D6</color>
+    <color name="cmn_ui_primary_color_alpha75">#BF31D6D6</color>
+    <color name="cmn_ui_primary_color_alpha_focus">#8831D6D6</color>
+    <color name="cmn_ui_primary_color_stroke">#31D6D6</color>
+    <color name="cmn_ui_primary_color_text">#31D6D6</color>
+
+    <color name="light_green">#F3FCFB</color>
+    <color name="light_green_1">#E9F8F8</color>
+
+    <color name="load_success">#03a44e</color>
+    <color name="load_failure">#de0e26</color>
+</resources>
