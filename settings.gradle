@@ -1,3 +1,7 @@
+include ':module_about'
+include ':module_apply'
+include ':module_knowledge'
+include ':module_home'
 include ':lib_ui'
 include ':lib_core'
 include ':lib_common'

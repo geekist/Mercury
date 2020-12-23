@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="BottomRoundNavigation">
+        <!-- 底部导航栏的高度(不包括阴影的高度和凸起的高度) -->
+        <attr name="brn_tab_height" format="dimension" />
+        <!-- 图标大小 -->
+        <attr name="brn_icon_size" format="dimension" />
+        <!-- 导航栏背景颜色 -->
+        <attr name="brn_background_color" format="color" />
+        <!-- 是否需要导航栏中间突出 -->
+        <attr name="brn_is_linear" format="boolean" />
+        <!-- 导航栏中间突出宽度 -->
+        <attr name="brn_bezier_width" format="dimension" />
+        <!-- 导航栏中间突出高度 -->
+        <attr name="brn_bezier_height" format="dimension" />
+        <!-- 导航栏阴影大小 -->
+        <attr name="brn_shadow_radius" format="dimension" />
+        <!-- 导航栏阴影颜色 -->
+        <attr name="brn_shadow_color" format="color" />
+    </declare-styleable>
+
     <declare-styleable name="TypefaceTextView">
         <attr name="typeface" format="string" />
     </declare-styleable>

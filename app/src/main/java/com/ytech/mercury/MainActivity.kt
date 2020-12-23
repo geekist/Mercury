@@ -9,20 +9,27 @@ import com.permissionx.guolindev.PermissionX
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.support.SupportActivity
 import com.ytech.ui.dialog.ServiceAgreementDialog
-import kotlinx.android.synthetic.main.activity_main.*
-
+import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator
+import me.yokeyword.fragmentation.anim.FragmentAnimator
 
 @Route(path = ARouterConstant.MAIN_ACTIVITY)
 class MainActivity : SupportActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //container.background =
+        if (findFragment(MainFragment::class.java) == null) {
+            loadRootFragment(R.id.fl_container, MainFragment())
+        }
 
         showPermission()
     }
 
+    override fun onCreateFragmentAnimator(): FragmentAnimator {
+        // 设置横向(和安卓4.x动画相同)
+        return DefaultHorizontalAnimator()
+    }
 
     private fun showPermission() {
         PermissionX.init(this)
@@ -50,20 +57,27 @@ class MainActivity : SupportActivity() {
                     Toast.makeText(this, "您拒绝了如下权限：$deniedList", Toast.LENGTH_SHORT).show()
                 }
 
-                XPopup.Builder(this)
-                    .asCustom(
-                        ServiceAgreementDialog(this)
-                        .onConfirmClick {
-                            Toast.makeText(this@MainActivity,"confirm",Toast.LENGTH_LONG).show()
-                        }.onDismissClick {
-                            finish()
-                        }.onServiceAgreementClick {
-                                Toast.makeText(this@MainActivity,"conService",Toast.LENGTH_LONG).show()
+                showServiceAgreement()
 
-                        })
-                    .show()
             }
     }
+
+    private fun showServiceAgreement() {
+        XPopup.Builder(this)
+            .asCustom(
+                ServiceAgreementDialog(this)
+                    .onConfirmClick {
+                        Toast.makeText(this@MainActivity, "confirm", Toast.LENGTH_LONG).show()
+                    }.onDismissClick {
+                        finish()
+                    }.onServiceAgreementClick {
+                        Toast.makeText(this@MainActivity, "conService", Toast.LENGTH_LONG).show()
+
+                    })
+            .show()
+    }
+
+
 
 
 }
