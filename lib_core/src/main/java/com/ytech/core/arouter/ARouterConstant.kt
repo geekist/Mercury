@@ -5,6 +5,22 @@ object ARouterConstant {
 
     const val MAIN_ACTIVITY = "/app/MainActivity"
 
+    object ModuleAbout {
+        const val FRAGMENT_ABOUT = "/about/AboutFragment"
+    }
+
+    object ModuleHome {
+        const val FRAGMENT_HOME = "/home/HomeFragment"
+    }
+
+    object ModuleKnowledge {
+        const val FRAGMENT_KNOWLEDGE = "/knowledge/KnowledgeFragment"
+    }
+
+    object ModuleApply {
+        const val FRAGMENT_APPLY = "/apply/ApplyFragment"
+    }
+
     /**
      * 消息模块
      */

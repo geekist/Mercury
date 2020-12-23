@@ -68,5 +68,11 @@ dependencies {
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt 'com.alibaba:arouter-compiler:1.5.1'
 
+    implementation project(":module_home")
+    implementation project(":module_apply")
+    implementation project(":module_knowledge")
+    implementation project(":module_about")
+
+
     api project(":lib_core")
 }

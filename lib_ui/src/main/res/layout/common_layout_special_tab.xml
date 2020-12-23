@@ -1,0 +1,59 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="?attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/ll_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp" />
+            <!--tools:src="@mipmap/ic_launcher"-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:singleLine="true"
+                android:textSize="12sp"
+                tools:text="首页" />
+        </LinearLayout>
+
+        <com.flyco.tablayout.widget.MsgView
+            android:id="@+id/mMsgTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-7dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/ll_tab"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="10.5sp"
+            android:visibility="gone"
+            app:mv_backgroundColor="#FD481F"
+            app:mv_isRadiusHalfHeight="true"
+            app:mv_strokeColor="#ffffff"
+            app:mv_strokeWidth="0dp"
+            tools:ignore="SmallSp"
+            tools:visibility="visible" />
+    </RelativeLayout>
+</FrameLayout>
