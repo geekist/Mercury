@@ -1,0 +1,8 @@
+com/alibaba/android/arouter/routes/ARouter$$Group$$knowledge.java
+ com.alibaba.android.arouter.routes.ARouter$$Group$$knowledge
+com/alibaba/android/arouter/routes/ARouter$$Root$$module_knowledge.java
+ com.alibaba.android.arouter.routes.ARouter$$Root$$module_knowledge
+com/alibaba/android/arouter/routes/ARouter$$Providers$$module_knowledge.java
+ com.alibaba.android.arouter.routes.ARouter$$Providers$$module_knowledge
+com/ytech/knowledge/BuildConfig.java
+ com.ytech.knowledge.BuildConfig
