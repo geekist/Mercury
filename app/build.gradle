@@ -24,6 +24,10 @@ android {
                 arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
+
+        dataBinding {
+            enabled = true
+        }
     }
 
     buildTypes {
@@ -68,10 +72,16 @@ dependencies {
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt 'com.alibaba:arouter-compiler:1.5.1'
 
+    
+    implementation rootProject.ext.dependencies["coroutine"]
+    implementation rootProject.ext.dependencies["coroutine-android"]
+
     implementation project(":module_home")
     implementation project(":module_apply")
     implementation project(":module_knowledge")
     implementation project(":module_about")
+    implementation project(":module_account")
+
 
 
     api project(":lib_core")

@@ -2159,6 +2159,7 @@ id cos
 id custom
 id customPanel
 id cut
+id dataBinding
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2298,6 +2299,8 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id onAttachStateChangeListener
+id onDateChanged
 id outline
 id oval
 id packed
@@ -2409,6 +2412,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textWatcher
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2638,6 +2642,18 @@ string abc_activity_chooser_view_see_all
 string abc_activitychooserview_choose_application
 string abc_capital_off
 string abc_capital_on
+string abc_font_family_body_1_material
+string abc_font_family_body_2_material
+string abc_font_family_button_material
+string abc_font_family_caption_material
+string abc_font_family_display_1_material
+string abc_font_family_display_2_material
+string abc_font_family_display_3_material
+string abc_font_family_display_4_material
+string abc_font_family_headline_material
+string abc_font_family_menu_material
+string abc_font_family_subhead_material
+string abc_font_family_title_material
 string abc_menu_alt_shortcut_label
 string abc_menu_ctrl_shortcut_label
 string abc_menu_delete_shortcut_label

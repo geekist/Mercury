@@ -1,4 +1,4 @@
-package com.ytech.core.constant
+package com.ytech.core.net
 
 import com.ytech.core.BuildConfig
 
@@ -9,7 +9,6 @@ object UrlConstant {
             BASE_URL_DEBUG
         else
             BASE_URL_RELEASE
-
 
     //Account
     val MESSAGE_BASE_URL: String
@@ -28,10 +27,11 @@ object UrlConstant {
 
 
     // 发行版url
-    const val BASE_URL_RELEASE = "https://www.wanandroid.com"
+    private const val BASE_URL_RELEASE = "https://www.wanandroid.com"
 
     // 测试版url
-    const val BASE_URL_DEBUG = "https://www.wanandroid.com"
+    private const val BASE_URL_DEBUG = "https://www.wanandroid.com"
+
 
     const val MESSAGE_BASE_URL_RELEASE = "http://message.iyuya.com/api"
     const val MESSAGE_BASE_URL_DEBUG = "http://message.iyuya.com/api"

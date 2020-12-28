@@ -1,3 +1,4 @@
+include ':module_account'
 include ':module_about'
 include ':module_apply'
 include ':module_knowledge'

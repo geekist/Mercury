@@ -13,6 +13,12 @@ object ARouterConstant {
         const val FRAGMENT_HOME = "/home/HomeFragment"
     }
 
+    object ModuleAccount {
+        const val FRAGMENT_LOGIN = "/account/LoginFragment"
+        const val FRAGMENT_REGISTER = "/account/RegisterFragment"
+        const val FRAGMENT_RENEW_PASSWORD = "/account/RenewPasswordFragment"
+    }
+
     object ModuleKnowledge {
         const val FRAGMENT_KNOWLEDGE = "/knowledge/KnowledgeFragment"
     }

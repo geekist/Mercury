@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.hjq.toast.ToastUtils
 import com.ytech.about.AboutFragment
+import com.ytech.account.login.LoginFragment
 import com.ytech.apply.ApplyFragment
 import com.ytech.core.animator.CustomHorizontalAnimator
 import com.ytech.core.arouter.ARouterConstant
@@ -32,7 +33,8 @@ class MainFragment : SupportFragment() {
             ARouterUtils.obtainFragment(ARouterConstant.ModuleHome.FRAGMENT_HOME),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleApply.FRAGMENT_APPLY),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE),
-            ARouterUtils.obtainFragment(ARouterConstant.ModuleAbout.FRAGMENT_ABOUT)
+           // ARouterUtils.obtainFragment(ARouterConstant.ModuleAbout.FRAGMENT_ABOUT)
+            ARouterUtils.obtainFragment(ARouterConstant.ModuleAccount.FRAGMENT_LOGIN)
         )
     }
 
@@ -111,7 +113,9 @@ class MainFragment : SupportFragment() {
                 mFragments[MODULE_HOME_INDEX] = firstFragment
                 mFragments[MODULE_APPLY_INDEX] = findChildFragment(ApplyFragment::class.java)
                 mFragments[MODULE_KNOWLEDGE_INDEX] = findChildFragment(KnowledgeFragment::class.java)
-                mFragments[MODULE_ABOUT_INDEX] = findChildFragment(AboutFragment::class.java)
+               // mFragments[MODULE_ABOUT_INDEX] = findChildFragment(AboutFragment::class.java)
+
+                mFragments[MODULE_ABOUT_INDEX] = findChildFragment(LoginFragment::class.java)
             }
         }
     }
