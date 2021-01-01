@@ -61,8 +61,7 @@ dependencies {
 
     api rootProject.ext.dependencies["eventbus"]
 
-    api rootProject.ext.dependencies["fragmentation-core"]
-    api rootProject.ext.dependencies["fragmentation-swipeback"]
+
 
     api project(":lib_ui")
 

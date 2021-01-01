@@ -8,9 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import com.tencent.mmkv.MMKV
 import com.ytech.core.model.User
 
-/**
- * Create by liwen on 2020/5/27
- */
 object UserManager {
 
     private const val USER_DATA: String = "user_data"
@@ -39,9 +36,6 @@ object UserManager {
 
     fun removeUser() {
         mmkv.encode(USER_DATA, "")
-//        if (liveData.hasObservers()) {
-//            liveData.postValue(getUser())
-//        }
     }
 
     fun start(context: Context): LiveData<User> {

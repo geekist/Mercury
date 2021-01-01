@@ -1,8 +1,41 @@
-com/alibaba/android/arouter/routes/ARouter$$Group$$knowledge.java
- com.alibaba.android.arouter.routes.ARouter$$Group$$knowledge
+com/ytech/core/BR.java
+ com.ytech.core.BR
+com/ytech/knowledge/DataBindingTriggerClass.java
+ com.ytech.knowledge.DataBindingTriggerClass
+com/ytech/knowledge/databinding/TreeListItemBindingImpl.java
+ com.ytech.knowledge.databinding.TreeListItemBindingImpl
 com/alibaba/android/arouter/routes/ARouter$$Root$$module_knowledge.java
  com.alibaba.android.arouter.routes.ARouter$$Root$$module_knowledge
+com/ytech/knowledge/databinding/FragmentKnowledgeBinding.java
+ com.ytech.knowledge.databinding.FragmentKnowledgeBinding
+com/ytech/knowledge/BR.java
+ com.ytech.knowledge.BR
+com/ytech/knowledge/databinding/FragmentKnowledgeBindingImpl.java
+ com.ytech.knowledge.databinding.FragmentKnowledgeBindingImpl
+com/ytech/knowledge/databinding/FragmentKnowledgeDetailBindingImpl.java
+ com.ytech.knowledge.databinding.FragmentKnowledgeDetailBindingImpl
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/ytech/knowledge/databinding/TreeListItemBinding.java
+ com.ytech.knowledge.databinding.TreeListItemBinding
+com/ytech/knowledge/knowledgedetail/KnowledgeDetailFragment$$ARouter$$Autowired.java
+ com.ytech.knowledge.knowledgedetail.KnowledgeDetailFragment$$ARouter$$Autowired
+com/ytech/knowledge/DataBinderMapperImpl.java
+ com.ytech.knowledge.DataBinderMapperImpl
+ com.ytech.knowledge.DataBinderMapperImpl$InnerBrLookup
+ com.ytech.knowledge.DataBinderMapperImpl$InnerLayoutIdLookup
+com/ytech/knowledge/databinding/FragmentKnowledgeDetailBinding.java
+ com.ytech.knowledge.databinding.FragmentKnowledgeDetailBinding
+com/ytech/knowledge/databinding/TreeDetailListItemBindingImpl.java
+ com.ytech.knowledge.databinding.TreeDetailListItemBindingImpl
 com/alibaba/android/arouter/routes/ARouter$$Providers$$module_knowledge.java
  com.alibaba.android.arouter.routes.ARouter$$Providers$$module_knowledge
 com/ytech/knowledge/BuildConfig.java
  com.ytech.knowledge.BuildConfig
+com/ytech/knowledge/databinding/TreeDetailListItemBinding.java
+ com.ytech.knowledge.databinding.TreeDetailListItemBinding
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/alibaba/android/arouter/routes/ARouter$$Group$$knowledge.java
+ com.alibaba.android.arouter.routes.ARouter$$Group$$knowledge
+ com.alibaba.android.arouter.routes.ARouter$$Group$$knowledge$1

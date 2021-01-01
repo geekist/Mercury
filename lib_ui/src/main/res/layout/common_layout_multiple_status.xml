@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mIvIcon"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/mTvTitle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:visibility="visible" />
+    <!--tools:src="@mipmap/ic_launcher"-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mTvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:lines="1"
+        android:textColor="@color/colorGray999"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/mTvSubTitle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mIvIcon"
+        tools:text="这里啥也没有"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mTvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2dp"
+        android:maxWidth="250dp"
+        android:maxLines="2"
+        android:textColor="@color/colorGrayccc"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/mBtnAction"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTvTitle"
+        tools:text="这里啥也没有 这里啥也没有 这里啥也没有 这里啥也没有 这里啥也没有"
+        tools:visibility="visible" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/mBtnAction"
+        android:layout_width="90dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:textColor="@color/cmn_ui_primary_color_text"
+        android:visibility="gone"
+        app:bl_corners_radius="2dp"
+        app:bl_ripple_color="@color/black_2"
+        app:bl_ripple_enable="true"
+        app:bl_solid_color="@color/backgroundPanel"
+        app:bl_stroke_color="@color/cmn_ui_primary_color_stroke"
+        app:bl_stroke_width="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTvSubTitle"
+        app:layout_goneMarginTop="10dp"
+        tools:text="行动按钮"
+        tools:visibility="visible" />
+
+    <!--<androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/mProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/custom_progress_bar"
+        android:indeterminateDuration="1200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mIvLoading"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/animation_loading"
+        tools:visibility="invisible" />
+
+    <!--<androidx.constraintlayout.widget.Group
+        android:id="@+id/mErrorGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="mIvIcon,mTvTitle,mTvSubTitle,mBtnAction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />-->
+
+    <ViewStub
+        android:id="@+id/mContentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</merge>

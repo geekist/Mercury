@@ -63,11 +63,6 @@ dependencies {
 
 
 
-
-    implementation rootProject.ext.dependencies.koinScop
-    implementation rootProject.ext.dependencies.KoinViewModel
-    implementation rootProject.ext.dependencies.koinFragmet
-
     compileOnly rootProject.ext.dependencies.mmkv
 
     implementation rootProject.ext.dependencies["arouter-api"]

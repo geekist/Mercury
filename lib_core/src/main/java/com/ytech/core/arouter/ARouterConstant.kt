@@ -21,6 +21,7 @@ object ARouterConstant {
 
     object ModuleKnowledge {
         const val FRAGMENT_KNOWLEDGE = "/knowledge/KnowledgeFragment"
+        const val FRAGMENT_KNOWLEDGE_DETAIL = "/knowledge/KnowledgeDetailFragment"
     }
 
     object ModuleApply {

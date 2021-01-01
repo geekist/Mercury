@@ -1,13 +1,12 @@
 package com.ytech.about
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.ytech.core.arouter.ARouterConstant
-import com.ytech.core.support.SupportFragment
+import com.ytech.ui.base.SupportFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

@@ -1,4 +1,21 @@
 R_DEF: Internal format may change without notice
 local
+drawable edittext_cursor_color
+drawable home_list_divier
+id actionBar
+id author
+id banner
+id desc
+id homeListContainer
+id mIvBack
+id mTvTitle
+id parentItem
+id recycleView
+id refreshLayout
+id time
+id title
+layout abs_list_layout
 layout fragment_home
+layout fragment_home_list
+layout layout_home_list
 string hello_blank_fragment

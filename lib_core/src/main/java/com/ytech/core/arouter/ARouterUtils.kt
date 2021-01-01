@@ -72,7 +72,7 @@ object ARouterUtils {
         return obtainFragmentWithBundle(path, buildBundle(*params))
     }
 
-    fun obtainFragmentWithBundle(path: String, args: Bundle): ISupportFragment {
+    private fun obtainFragmentWithBundle(path: String, args: Bundle): ISupportFragment {
         return ARouter.getInstance()
             .build(path)
             .with(args)

@@ -3,7 +3,7 @@ package com.alibaba.android.arouter.routes;
 import com.alibaba.android.arouter.facade.enums.RouteType;
 import com.alibaba.android.arouter.facade.model.RouteMeta;
 import com.alibaba.android.arouter.facade.template.IRouteGroup;
-import com.ytech.home.HomeFragment;
+import com.ytech.home.home.HomeFragment;
 import java.lang.Override;
 import java.lang.String;
 import java.util.Map;

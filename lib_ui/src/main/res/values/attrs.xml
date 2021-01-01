@@ -19,6 +19,80 @@
         <attr name="brn_shadow_color" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="TitleBar">
+        <attr name="tb_toolbar_height" format="dimension" />
+        <!-- 中间的布局 -->
+        <attr name="tb_center_layout" format="reference" />
+        <attr name="tb_center_layout_match" format="boolean" />
+        <!-- 位于ToolBar下方 -->
+        <attr name="tb_compose_layout" format="reference" />
+        <!-- 背景颜色 -->
+        <attr name="tb_bg_color" format="color" />
+        <!-- 标题栏做渐变的时候最终真实的背景色 -->
+        <attr name="tb_actual_bg_color" format="color" />
+        <attr name="tb_menu_color" format="color" />
+        <!-- 效果和tb_actual_bg_color属性类似 -->
+        <attr name="tb_actual_menu_color" format="color" />
+        <attr name="tb_title" format="string" />
+        <attr name="tb_title_color" format="color" />
+        <attr name="tb_actual_title_color" format="color" />
+        <attr name="tb_title_size" format="dimension" />
+        <attr name="tb_nav_icon" format="reference" />
+        <attr name="tb_nav_icon_tint" format="color" />
+        <attr name="tb_show_center_title" format="boolean" />
+        <attr name="tb_show_start_title" format="boolean" />
+        <attr name="tb_show_bold_title" format="boolean" />
+        <attr name="tb_show_divider" format="boolean" />
+        <attr name="tb_immersive_bar_support" format="boolean" />
+        <!-- 是否开启 -->
+        <attr name="tb_enable_tint" format="boolean" />
+        <attr name="tb_layout_scrollFlags" format="integer">
+            <flag name="scroll" value="1" />
+            <flag name="snap" value="16" />
+            <flag name="enterAlways" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CollapsingTitleBar">
+        <!-- 位于ToolBar下方 -->
+        <attr name="ctb_compose_layout" format="reference" />
+        <attr name="ctb_collapsing_layout" format="reference" />
+        <!-- 中间的布局 -->
+        <attr name="ctb_center_layout" format="reference" />
+        <attr name="ctb_center_layout_match" format="boolean" />
+        <!-- 背景颜色 -->
+        <attr name="ctb_bg_color" format="color" />
+        <attr name="ctb_actual_bg_color" format="color" />
+        <attr name="ctb_menu_color" format="color" />
+        <attr name="ctb_actual_menu_color" format="color" />
+        <attr name="ctb_title" format="string" />
+        <attr name="ctb_title_color" format="color" />
+        <attr name="ctb_actual_title_color" format="color" />
+        <attr name="ctb_title_size" format="dimension" />
+        <attr name="ctb_nav_icon" format="reference" />
+        <attr name="ctb_nav_icon_tint" format="color" />
+        <attr name="ctb_actual_nav_icon_tint" format="color" />
+        <attr name="ctb_show_divider" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MultipleStatusLayout">
+        <!-- 图标 -->
+        <attr name="msl_icon" format="reference" />
+        <!-- 标题文本 -->
+        <attr name="msl_title" format="string" />
+        <!-- 副标题文本 -->
+        <attr name="msl_sub_title" format="string" />
+        <!-- 按钮文本 -->
+        <attr name="msl_action_text" format="string" />
+        <!-- 内容布局 -->
+        <attr name="msl_content_layout" format="reference" />
+        <attr name="msl_status">
+            <enum name="content" value="1" />
+            <enum name="error" value="2" />
+            <enum name="loading" value="3" />
+        </attr>
+    </declare-styleable>
+
     <declare-styleable name="TypefaceTextView">
         <attr name="typeface" format="string" />
     </declare-styleable>

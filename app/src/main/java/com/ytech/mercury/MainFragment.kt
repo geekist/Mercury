@@ -5,15 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hjq.toast.ToastUtils
-import com.ytech.about.AboutFragment
 import com.ytech.account.login.LoginFragment
 import com.ytech.apply.ApplyFragment
 import com.ytech.core.animator.CustomHorizontalAnimator
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.arouter.ARouterUtils
-import com.ytech.core.support.SupportFragment
-import com.ytech.home.HomeFragment
-import com.ytech.knowledge.KnowledgeFragment
+import com.ytech.ui.base.SupportFragment
+import com.ytech.home.home.HomeFragment
+import com.ytech.knowledge.knowledge.KnowledgeFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 import me.yokeyword.fragmentation.anim.DefaultNoAnimator
 

@@ -15,7 +15,7 @@ import com.ytech.account.databinding.FragmentLoginBinding
 import com.ytech.account.model.LoginLayoutBean
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.model.User
-import com.ytech.core.support.SupportFragment
+import com.ytech.ui.base.SupportFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,7 +70,7 @@ class LoginFragment : SupportFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        fragmentLoginBinding = DataBindingUtil.inflate(layoutInflater,
+        fragmentLoginBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_login,
             container,
             false)

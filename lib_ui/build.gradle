@@ -52,7 +52,10 @@ dependencies {
 
     api rootProject.ext.dependencies["flyco-tab-layout"]
 
+    api rootProject.ext.dependencies["fragmentation-core"]
+    api rootProject.ext.dependencies["fragmentation-swipeback"]
 
+    api rootProject.ext.dependencies["immersion-bar"]
 
     api project(":lib_common")
 }

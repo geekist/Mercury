@@ -11,9 +11,6 @@ import com.ytech.core.model.User
 import com.ytech.core.net.model.NetResult
 import kotlinx.coroutines.launch
 
-/**
- * Create by liwen on 2020/5/27
- */
 class LoginViewModel() : ViewModel() {
 
     private val loginLiveData = MutableLiveData<User>()

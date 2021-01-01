@@ -7,7 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.lxj.xpopup.XPopup
 import com.permissionx.guolindev.PermissionX
 import com.ytech.core.arouter.ARouterConstant
-import com.ytech.core.support.SupportActivity
+import com.ytech.ui.base.SupportActivity
 import com.ytech.ui.dialog.ServiceAgreementDialog
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator
 import me.yokeyword.fragmentation.anim.FragmentAnimator

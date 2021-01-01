@@ -1,4 +1,22 @@
 R_DEF: Internal format may change without notice
 local
+drawable default_bg_color
+drawable home_list_divider
+id actionBar
+id author
+id desc
+id itemParent
+id mFlowLayout
+id mIvBack
+id mTvTitle
+id recycleView
+id refreshLayout
+id rvKnowledge
+id time
+id title
+layout flow_layout_item
 layout fragment_knowledge
+layout fragment_knowledge_detail
+layout tree_detail_list_item
+layout tree_list_item
 string hello_blank_fragment

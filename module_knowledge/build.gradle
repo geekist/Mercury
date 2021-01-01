@@ -23,6 +23,10 @@ android {
                 arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
+
+        dataBinding {
+            enabled = true
+        }
     }
 
     buildTypes {
@@ -54,6 +58,13 @@ dependencies {
 
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt 'com.alibaba:arouter-compiler:1.5.1'
+
+
+    implementation rootProject.ext.dependencies.lifecycleExt
+    implementation rootProject.ext.dependencies.lifecycleViewmodelKtx
+
+    implementation rootProject.ext.dependencies.paging
+
 
     compileOnly project(":lib_core")
 }

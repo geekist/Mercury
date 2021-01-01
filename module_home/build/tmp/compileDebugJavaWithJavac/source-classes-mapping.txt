@@ -1,8 +1,38 @@
-com/alibaba/android/arouter/routes/ARouter$$Providers$$module_home.java
- com.alibaba.android.arouter.routes.ARouter$$Providers$$module_home
+com/ytech/core/BR.java
+ com.ytech.core.BR
+com/ytech/home/databinding/AbsListLayoutBindingImpl.java
+ com.ytech.home.databinding.AbsListLayoutBindingImpl
+com/ytech/home/databinding/AbsListLayoutBinding.java
+ com.ytech.home.databinding.AbsListLayoutBinding
+com/ytech/home/databinding/FragmentHomeBinding.java
+ com.ytech.home.databinding.FragmentHomeBinding
 com/alibaba/android/arouter/routes/ARouter$$Group$$home.java
  com.alibaba.android.arouter.routes.ARouter$$Group$$home
-com/alibaba/android/arouter/routes/ARouter$$Root$$module_home.java
- com.alibaba.android.arouter.routes.ARouter$$Root$$module_home
+com/ytech/home/DataBinderMapperImpl.java
+ com.ytech.home.DataBinderMapperImpl
+ com.ytech.home.DataBinderMapperImpl$InnerBrLookup
+ com.ytech.home.DataBinderMapperImpl$InnerLayoutIdLookup
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/ytech/home/databinding/LayoutHomeListBindingImpl.java
+ com.ytech.home.databinding.LayoutHomeListBindingImpl
 com/ytech/home/BuildConfig.java
  com.ytech.home.BuildConfig
+com/ytech/home/databinding/FragmentHomeListBindingImpl.java
+ com.ytech.home.databinding.FragmentHomeListBindingImpl
+com/ytech/home/databinding/FragmentHomeListBinding.java
+ com.ytech.home.databinding.FragmentHomeListBinding
+com/alibaba/android/arouter/routes/ARouter$$Providers$$module_home.java
+ com.alibaba.android.arouter.routes.ARouter$$Providers$$module_home
+com/ytech/home/BR.java
+ com.ytech.home.BR
+com/ytech/home/databinding/LayoutHomeListBinding.java
+ com.ytech.home.databinding.LayoutHomeListBinding
+com/alibaba/android/arouter/routes/ARouter$$Root$$module_home.java
+ com.alibaba.android.arouter.routes.ARouter$$Root$$module_home
+com/ytech/home/DataBindingTriggerClass.java
+ com.ytech.home.DataBindingTriggerClass
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/ytech/home/databinding/FragmentHomeBindingImpl.java
+ com.ytech.home.databinding.FragmentHomeBindingImpl
