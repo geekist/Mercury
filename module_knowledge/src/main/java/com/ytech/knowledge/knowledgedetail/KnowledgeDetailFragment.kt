@@ -1,7 +1,6 @@
 package com.ytech.knowledge.knowledgedetail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +20,6 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.ytech.core.arouter.ARouterConstant
-import com.ytech.core.arouter.ARouterUtils
 import com.ytech.core.model.DatasBean
 import com.ytech.knowledge.R
 import com.ytech.knowledge.databinding.FragmentKnowledgeDetailBinding
@@ -48,7 +46,6 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
     override fun onCreate(savedInstanceState: Bundle?) {
         ARouter.getInstance().inject(this)
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(

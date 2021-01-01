@@ -1,7 +1,6 @@
 package com.ytech.home.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +11,11 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.youth.banner.indicator.CircleIndicator
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.home.R
-import com.ytech.ui.base.SupportFragment
-import com.ytech.home.home.adapter.HomeBannerAdapter
 import com.ytech.home.databinding.FragmentHomeBinding
-import com.ytech.home.homelist.HomeListFragment
+import com.ytech.home.home.adapter.HomeBannerAdapter
 import com.ytech.home.home.model.Banner
+import com.ytech.home.homelist.HomeListFragment
+import com.ytech.ui.base.SupportFragment
 
 @Route(path = ARouterConstant.ModuleHome.FRAGMENT_HOME)
 class HomeFragment : SupportFragment() {

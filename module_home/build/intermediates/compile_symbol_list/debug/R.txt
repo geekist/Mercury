@@ -1489,6 +1489,7 @@ int color mtrl_textinput_disabled_color 0x0
 int color mtrl_textinput_filled_box_default_background_color 0x0
 int color mtrl_textinput_focused_box_stroke_color 0x0
 int color mtrl_textinput_hovered_box_stroke_color 0x0
+int color navigation_tab_bg 0x0
 int color notification_action_color_filter 0x0
 int color notification_icon_bg_color 0x0
 int color notification_material_background_media_default_color 0x0
@@ -1520,6 +1521,7 @@ int color switch_thumb_material_dark 0x0
 int color switch_thumb_material_light 0x0
 int color switch_thumb_normal_material_dark 0x0
 int color switch_thumb_normal_material_light 0x0
+int color tab_indicator_color 0x0
 int color test_mtrl_calendar_day 0x0
 int color test_mtrl_calendar_day_selected 0x0
 int color textColor4A 0x0
@@ -2630,6 +2632,7 @@ int layout abc_alert_dialog_title_material 0x0
 int layout abc_cascading_menu_item_layout 0x0
 int layout abc_dialog_title_material 0x0
 int layout abc_expanded_menu_layout 0x0
+int layout abc_list_layout 0x0
 int layout abc_list_menu_item_checkbox 0x0
 int layout abc_list_menu_item_icon 0x0
 int layout abc_list_menu_item_layout 0x0
@@ -2644,7 +2647,6 @@ int layout abc_search_dropdown_item_icons_2line 0x0
 int layout abc_search_view 0x0
 int layout abc_select_dialog_material 0x0
 int layout abc_tooltip 0x0
-int layout abs_list_layout 0x0
 int layout brvah_quick_view_load_more 0x0
 int layout common_layout_center_title 0x0
 int layout common_layout_collapsing_title_bar 0x0

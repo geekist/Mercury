@@ -1,8 +1,0 @@
-com/alibaba/android/arouter/routes/ARouter$$Group$$apply.java
- com.alibaba.android.arouter.routes.ARouter$$Group$$apply
-com/alibaba/android/arouter/routes/ARouter$$Root$$module_apply.java
- com.alibaba.android.arouter.routes.ARouter$$Root$$module_apply
-com/ytech/apply/BuildConfig.java
- com.ytech.apply.BuildConfig
-com/alibaba/android/arouter/routes/ARouter$$Providers$$module_apply.java
- com.alibaba.android.arouter.routes.ARouter$$Providers$$module_apply

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.hjq.toast.ToastUtils
 import com.ytech.account.login.LoginFragment
-import com.ytech.apply.ApplyFragment
+import com.ytech.apply.apply.ApplyFragment
 import com.ytech.core.animator.CustomHorizontalAnimator
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.arouter.ARouterUtils

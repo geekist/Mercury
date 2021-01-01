@@ -19,13 +19,13 @@ import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.ytech.core.model.DatasBean
 import com.ytech.home.R
-import com.ytech.home.databinding.AbsListLayoutBinding
+import com.ytech.home.databinding.AbcListLayoutBinding
 import com.ytech.home.homelist.adapter.HomeListAdapter
 import com.ytech.ui.base.SupportFragment
 
 class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListener {
 
-    private lateinit var mBinding: AbsListLayoutBinding
+    private lateinit var mBinding: AbcListLayoutBinding
     lateinit var mViewModel: HomeListViewModel
 
     lateinit var mAdapter: PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
@@ -39,7 +39,7 @@ class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListene
     ): View? {
         mBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.abs_list_layout,
+            R.layout.abc_list_layout,
             container,
             false
         )
@@ -105,7 +105,6 @@ class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListene
     }
 
     override fun onLoadMore(refreshLayout: RefreshLayout) {
-
         //当加载更多的时候返回了空数据 需要手动接管数据加载否则paging框架将不会继续加载数据
         val currentList = mAdapter.currentList
         if (currentList == null || currentList.size <= 0) {
@@ -143,5 +142,4 @@ class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListene
             mRefreshLayout.finishLoadMore()
         }
     }
-
 }

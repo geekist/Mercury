@@ -1490,6 +1490,7 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
+color navigation_tab_bg
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
@@ -1521,6 +1522,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color tab_indicator_color
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color textColor4A
@@ -2631,6 +2633,7 @@ layout abc_alert_dialog_title_material
 layout abc_cascading_menu_item_layout
 layout abc_dialog_title_material
 layout abc_expanded_menu_layout
+layout abc_list_layout
 layout abc_list_menu_item_checkbox
 layout abc_list_menu_item_icon
 layout abc_list_menu_item_layout
@@ -2645,7 +2648,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout abs_list_layout
 layout brvah_quick_view_load_more
 layout common_layout_center_title
 layout common_layout_collapsing_title_bar
