@@ -1497,6 +1497,7 @@ int color secondary_text_default_material_dark 0x0
 int color secondary_text_default_material_light 0x0
 int color secondary_text_disabled_material_dark 0x0
 int color secondary_text_disabled_material_light 0x0
+int color select_color 0x0
 int color split 0x0
 int color switch_thumb_disabled_material_dark 0x0
 int color switch_thumb_disabled_material_light 0x0
@@ -1999,8 +2000,10 @@ int drawable abc_textfield_search_default_mtrl_alpha 0x0
 int drawable abc_textfield_search_material 0x0
 int drawable abc_vector_test 0x0
 int drawable animation_loading 0x0
+int drawable avatar 0x0
 int drawable avd_hide_password 0x0
 int drawable avd_show_password 0x0
+int drawable bg 0x0
 int drawable brvah_sample_footer_loading 0x0
 int drawable brvah_sample_footer_loading_progress 0x0
 int drawable btn_checkbox_checked_mtrl 0x0
@@ -2019,6 +2022,7 @@ int drawable design_ic_visibility 0x0
 int drawable design_ic_visibility_off 0x0
 int drawable design_password_eye 0x0
 int drawable design_snackbar_background 0x0
+int drawable exit 0x0
 int drawable fragmentation_help 0x0
 int drawable fragmentation_ic_expandable 0x0
 int drawable fragmentation_ic_right 0x0
@@ -2046,6 +2050,7 @@ int drawable ic_no_network 0x0
 int drawable ic_splash_bg 0x0
 int drawable ic_student_checked 0x0
 int drawable ic_student_unchecked 0x0
+int drawable logo 0x0
 int drawable material_ic_calendar_black_24dp 0x0
 int drawable material_ic_clear_black_24dp 0x0
 int drawable material_ic_edit_black_24dp 0x0
@@ -2053,6 +2058,7 @@ int drawable material_ic_keyboard_arrow_left_black_24dp 0x0
 int drawable material_ic_keyboard_arrow_right_black_24dp 0x0
 int drawable material_ic_menu_arrow_down_black_24dp 0x0
 int drawable material_ic_menu_arrow_up_black_24dp 0x0
+int drawable mine 0x0
 int drawable mtrl_dialog_background 0x0
 int drawable mtrl_dropdown_arrow 0x0
 int drawable mtrl_ic_arrow_drop_down 0x0
@@ -2063,6 +2069,7 @@ int drawable mtrl_popupmenu_background 0x0
 int drawable mtrl_popupmenu_background_dark 0x0
 int drawable mtrl_tabs_default_indicator 0x0
 int drawable navigation_empty_icon 0x0
+int drawable new_enter_button 0x0
 int drawable notification_action_background 0x0
 int drawable notification_bg 0x0
 int drawable notification_bg_low 0x0
@@ -2172,6 +2179,7 @@ int id action_text 0x0
 int id actions 0x0
 int id activity_chooser_view_content 0x0
 int id add 0x0
+int id agentweb_webview_id 0x0
 int id alertTitle 0x0
 int id aligned 0x0
 int id always 0x0
@@ -2309,9 +2317,11 @@ int id loading 0x0
 int id loading_progress 0x0
 int id loading_text 0x0
 int id mBtnAction 0x0
+int id mBtnReload 0x0
 int id mCenterLayout 0x0
 int id mCollapsingLayout 0x0
 int id mCollapsingToolbar 0x0
+int id mCollect 0x0
 int id mComposeLayout 0x0
 int id mContentLayout 0x0
 int id mCropView 0x0
@@ -2330,12 +2340,16 @@ int id mRefreshLayout 0x0
 int id mRvList 0x0
 int id mStatusLayout 0x0
 int id mTitle 0x0
+int id mTitleBar 0x0
 int id mToolbar 0x0
 int id mTvCancel 0x0
 int id mTvConfirm 0x0
 int id mTvContent 0x0
 int id mTvSubTitle 0x0
 int id mTvTitle 0x0
+int id mWebView 0x0
+int id mainframe_error_container_id 0x0
+int id mainframe_error_viewsub_id 0x0
 int id masked 0x0
 int id match_parent 0x0
 int id media_actions 0x0
@@ -2540,6 +2554,7 @@ int id useLogo 0x0
 int id view_offset_helper 0x0
 int id visible 0x0
 int id visible_removing_fragment_view_tag 0x0
+int id web_parent_layout_id 0x0
 int id withText 0x0
 int id withinBounds 0x0
 int id wrap 0x0
@@ -2626,6 +2641,8 @@ int layout abc_search_dropdown_item_icons_2line 0x0
 int layout abc_search_view 0x0
 int layout abc_select_dialog_material 0x0
 int layout abc_tooltip 0x0
+int layout activity_web_client 0x0
+int layout agentweb_error_page 0x0
 int layout brvah_quick_view_load_more 0x0
 int layout common_layout_center_title 0x0
 int layout common_layout_collapsing_title_bar 0x0
@@ -2654,6 +2671,7 @@ int layout design_text_input_start_icon 0x0
 int layout flow_layout_item 0x0
 int layout fragment_knowledge 0x0
 int layout fragment_knowledge_detail 0x0
+int layout fragment_web_client 0x0
 int layout include_viewpager 0x0
 int layout layout_tab 0x0
 int layout layout_tab_bottom 0x0
@@ -2730,6 +2748,7 @@ int layout text_view_with_theme_line_height 0x0
 int layout text_view_without_line_height 0x0
 int layout tree_detail_list_item 0x0
 int layout tree_list_item 0x0
+int layout web_layout_error 0x0
 int plurals mtrl_badge_content_description 0x0
 int string abc_action_bar_home_description 0x0
 int string abc_action_bar_home_description_format 0x0
@@ -2777,6 +2796,25 @@ int string add_evaluation_template 0x0
 int string add_workday 0x0
 int string address_book 0x0
 int string after_work_time_card 0x0
+int string agentweb_camera 0x0
+int string agentweb_cancel 0x0
+int string agentweb_click_open 0x0
+int string agentweb_coming_soon_download 0x0
+int string agentweb_current_downloaded_length 0x0
+int string agentweb_current_downloading_progress 0x0
+int string agentweb_default_page_error 0x0
+int string agentweb_download 0x0
+int string agentweb_download_fail 0x0
+int string agentweb_download_task_has_been_exist 0x0
+int string agentweb_file_chooser 0x0
+int string agentweb_file_download 0x0
+int string agentweb_honeycomblow 0x0
+int string agentweb_leave 0x0
+int string agentweb_leave_app_and_go_other_page 0x0
+int string agentweb_loading 0x0
+int string agentweb_max_file_length_limit 0x0
+int string agentweb_tips 0x0
+int string agentweb_trickter 0x0
 int string all_workday 0x0
 int string app_name 0x0
 int string app_update 0x0
@@ -3706,6 +3744,7 @@ int style Widget_MaterialComponents_Toolbar_Surface 0x0
 int style Widget_MaterialComponents_Tooltip 0x0
 int style Widget_Support_CoordinatorLayout 0x0
 int style _XPopup_TransparentDialog 0x0
+int style actionActivity 0x0
 int[] styleable ActionBar { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable ActionBar_background 0
 int styleable ActionBar_backgroundSplit 1
@@ -5692,3 +5731,4 @@ int xml standalone_badge_gravity_bottom_end 0x0
 int xml standalone_badge_gravity_bottom_start 0x0
 int xml standalone_badge_gravity_top_start 0x0
 int xml standalone_badge_offset 0x0
+int xml web_files_public 0x0

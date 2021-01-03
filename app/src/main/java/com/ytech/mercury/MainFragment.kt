@@ -32,8 +32,8 @@ class MainFragment : SupportFragment() {
             ARouterUtils.obtainFragment(ARouterConstant.ModuleHome.FRAGMENT_HOME),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleApply.FRAGMENT_APPLY),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE),
-           // ARouterUtils.obtainFragment(ARouterConstant.ModuleAbout.FRAGMENT_ABOUT)
-            ARouterUtils.obtainFragment(ARouterConstant.ModuleAccount.FRAGMENT_LOGIN)
+            ARouterUtils.obtainFragment(ARouterConstant.ModuleAbout.FRAGMENT_ABOUT)
+           // ARouterUtils.obtainFragment(ARouterConstant.ModuleAccount.FRAGMENT_LOGIN)
         )
     }
 

@@ -7,6 +7,7 @@ object ARouterConstant {
 
     object ModuleAbout {
         const val FRAGMENT_ABOUT = "/about/AboutFragment"
+        const val ACTIVITY_ABOUT = "/about/AboutMeActivity"
     }
 
     object ModuleHome {
@@ -26,6 +27,17 @@ object ARouterConstant {
 
     object ModuleApply {
         const val FRAGMENT_APPLY = "/apply/ApplyFragment"
+    }
+
+    object LibCore {
+        const val FRAGMENT_WEB_CLIENT = "/lib/core/WebClientFragment"
+        const val ACTIVITY_WEB_CLIENT = "/lib/core/WebClientActivity"
+    }
+
+    object WebView {
+        const val WEB_CLIENT_ACTIVITY_PROVIDER = "/lib/core/WebClientProvider"
+        const val WEB_VIEW_PROVIDER_PATH = "/webView/webView_provider"
+
     }
 
     /**

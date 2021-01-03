@@ -1515,6 +1515,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color select_color
 color split
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
@@ -2017,8 +2018,10 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable animation_loading
+drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg
 drawable brvah_sample_footer_loading
 drawable brvah_sample_footer_loading_progress
 drawable btn_checkbox_checked_mtrl
@@ -2037,6 +2040,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable edittext_cursor_color
+drawable exit
 drawable fragmentation_help
 drawable fragmentation_ic_expandable
 drawable fragmentation_ic_right
@@ -2064,6 +2068,7 @@ drawable ic_no_network
 drawable ic_splash_bg
 drawable ic_student_checked
 drawable ic_student_unchecked
+drawable logo
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -2071,6 +2076,7 @@ drawable material_ic_keyboard_arrow_left_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable mine
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -2081,6 +2087,7 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable new_enter_button
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -2190,6 +2197,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id agentweb_webview_id
 id alertTitle
 id aligned
 id always
@@ -2330,9 +2338,11 @@ id loading
 id loading_progress
 id loading_text
 id mBtnAction
+id mBtnReload
 id mCenterLayout
 id mCollapsingLayout
 id mCollapsingToolbar
+id mCollect
 id mComposeLayout
 id mContentLayout
 id mCropView
@@ -2350,12 +2360,16 @@ id mRefreshLayout
 id mRvList
 id mStatusLayout
 id mTitle
+id mTitleBar
 id mToolbar
 id mTvCancel
 id mTvConfirm
 id mTvContent
 id mTvSubTitle
 id mTvTitle
+id mWebView
+id mainframe_error_container_id
+id mainframe_error_viewsub_id
 id masked
 id match_parent
 id media_actions
@@ -2561,6 +2575,7 @@ id vertical
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
+id web_parent_layout_id
 id withText
 id withinBounds
 id wrap
@@ -2648,6 +2663,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_web_client
+layout agentweb_error_page
 layout brvah_quick_view_load_more
 layout common_layout_center_title
 layout common_layout_collapsing_title_bar
@@ -2675,6 +2692,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_home
 layout fragment_home_list
+layout fragment_web_client
 layout include_viewpager
 layout layout_home_list
 layout layout_tab
@@ -2750,6 +2768,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout web_layout_error
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_home_description_format
@@ -2797,6 +2816,25 @@ string add_evaluation_template
 string add_workday
 string address_book
 string after_work_time_card
+string agentweb_camera
+string agentweb_cancel
+string agentweb_click_open
+string agentweb_coming_soon_download
+string agentweb_current_downloaded_length
+string agentweb_current_downloading_progress
+string agentweb_default_page_error
+string agentweb_download
+string agentweb_download_fail
+string agentweb_download_task_has_been_exist
+string agentweb_file_chooser
+string agentweb_file_download
+string agentweb_honeycomblow
+string agentweb_leave
+string agentweb_leave_app_and_go_other_page
+string agentweb_loading
+string agentweb_max_file_length_limit
+string agentweb_tips
+string agentweb_trickter
 string all_workday
 string app_name
 string app_update
@@ -3730,6 +3768,7 @@ style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style _XPopup_TransparentDialog
+style actionActivity
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -3889,3 +3928,4 @@ xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start
 xml standalone_badge_gravity_top_start
 xml standalone_badge_offset
+xml web_files_public

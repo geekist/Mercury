@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.ytech.core.arouter.provider.WebViewWrapProvider
+
 import com.ytech.core.model.DatasBean
 import com.ytech.home.databinding.LayoutHomeListBinding
 
 class HomeListAdapter(context: Context) :
-
     PagedListAdapter<DatasBean, HomeListAdapter.ViewHolder>(object :
 
         DiffUtil.ItemCallback<DatasBean>() {
@@ -28,7 +29,6 @@ class HomeListAdapter(context: Context) :
         ): Boolean {
             return oldItem.id == newItem.id
         }
-
 
     }) {
 
@@ -64,7 +64,7 @@ class HomeListAdapter(context: Context) :
             mBinding.feed = datasBean
 
             mBinding.parentItem.setOnClickListener {
-              //  WebViewWarpService.instance.start(mContext, datasBean.title, datasBean.link)
+                WebViewWrapProvider.instance.start(mContext, datasBean.title, datasBean.link)
             }
         }
 

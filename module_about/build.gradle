@@ -37,6 +37,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -46,6 +50,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -53,6 +58,13 @@ dependencies {
 
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt 'com.alibaba:arouter-compiler:1.5.1'
+
+    //只是编译进去的话，viewmodelProvider通不过
+    implementation rootProject.ext.dependencies.lifecycleExt
+    implementation rootProject.ext.dependencies.lifecycleViewmodelKtx
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
 
     compileOnly project(":lib_core")
 }
