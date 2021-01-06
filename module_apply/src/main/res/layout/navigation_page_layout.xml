@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.ytech.apply.applydetail.model.ProjectItemSub" />
+        <import type="com.ytech.model.apply.ProjectItemSub" />
 
         <variable
             name="itemData"
-            type="ProjectItemSub" />
+            type="com.ytech.model.apply.ProjectItemSub" />
 
         <variable
             name="context"

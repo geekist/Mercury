@@ -4,11 +4,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.ytech.apply.apply.model.ProjectTabItem
+import com.ytech.model.apply.ProjectTabItem
 import com.ytech.apply.applydetail.ApplyItemFragment
 
 class ApplyFragmentStateAdapter(
-    private val mData: MutableList<ProjectTabItem>,
+    private val mData: MutableList<com.ytech.model.apply.ProjectTabItem>,
     childFragmentManager: FragmentManager,
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(childFragmentManager, lifecycle) {

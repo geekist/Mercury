@@ -24,9 +24,10 @@ open class TypefaceTextView : AppCompatTextView {
         with(context.obtainStyledAttributes(attributeSet, R.styleable.TypefaceTextView)) {
             val typeface = getString(R.styleable.TypefaceTextView_typeface)
             if (typeface.isNotEmptyStr()) {
-                val font = Typeface.createFromAsset(context.assets, "fonts/$typeface") ?: Typeface.DEFAULT
+                val font =
+                    Typeface.createFromAsset(context.assets, "fonts/$typeface") ?: Typeface.DEFAULT
                 setTypeface(font)
-            }else {
+            } else {
                 setTypeface(Typeface.DEFAULT)
             }
             recycle()

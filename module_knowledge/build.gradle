@@ -67,4 +67,7 @@ dependencies {
 
 
     compileOnly project(":lib_core")
+    compileOnly project(":lib_ui")
+    compileOnly project(":lib_common")
+    compileOnly project(":lib_model")
 }

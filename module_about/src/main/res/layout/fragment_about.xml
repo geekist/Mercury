@@ -7,7 +7,7 @@
 
         <variable
             name="user"
-            type="com.ytech.core.model.User" />
+            type="com.ytech.model.User" />
 
         <import type="android.view.View" />
 

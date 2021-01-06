@@ -69,4 +69,7 @@ dependencies {
     kapt 'com.alibaba:arouter-compiler:1.5.1'
 
     compileOnly project(":lib_core")
+    compileOnly project(":lib_ui")
+    compileOnly project(":lib_common")
+    compileOnly project(":lib_model")
 }

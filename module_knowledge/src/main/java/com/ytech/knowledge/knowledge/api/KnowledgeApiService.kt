@@ -2,10 +2,8 @@ package com.ytech.knowledge.knowledge.api
 
 
 import com.ytech.core.net.model.BaseModel
-import com.ytech.knowledge.knowledge.model.TreeData
+import com.ytech.model.knowledge.TreeData
 import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
 
 /**
  * Create by liwen on 2020-05-18
@@ -19,7 +17,7 @@ interface KnowledgeApiService {
     suspend fun getHomeList(@Path("count") count: Int): BaseModel<DataFeed>
 */
     @GET("/tree/json")
-    suspend fun getTreeList(): BaseModel<MutableList<TreeData>>
+    suspend fun getTreeList(): BaseModel<MutableList<com.ytech.model.knowledge.TreeData>>
 /*
     @GET("/project/tree/json")
     suspend fun getTabData(): BaseModel<MutableList<ProjectTabItem>>

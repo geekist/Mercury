@@ -8,24 +8,24 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ytech.core.arouter.provider.WebViewWrapProvider
+import com.ytech.ui.databinding.ListItem1Binding
 
-import com.ytech.core.model.DatasBean
-import com.ytech.home.databinding.LayoutHomeListBinding
+import com.ytech.model.DatasBean
 
 class HomeListAdapter(context: Context) :
-    PagedListAdapter<DatasBean, HomeListAdapter.ViewHolder>(object :
+    PagedListAdapter<com.ytech.model.DatasBean, HomeListAdapter.ViewHolder>(object :
 
-        DiffUtil.ItemCallback<DatasBean>() {
+        DiffUtil.ItemCallback<com.ytech.model.DatasBean>() {
         override fun areContentsTheSame(
-            oldItem: DatasBean,
-            newItem: DatasBean
+            oldItem: com.ytech.model.DatasBean,
+            newItem: com.ytech.model.DatasBean
         ): Boolean {
             return oldItem == newItem
         }
 
         override fun areItemsTheSame(
-            oldItem: DatasBean,
-            newItem: DatasBean
+            oldItem: com.ytech.model.DatasBean,
+            newItem: com.ytech.model.DatasBean
         ): Boolean {
             return oldItem.id == newItem.id
         }
@@ -38,7 +38,7 @@ class HomeListAdapter(context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        val binding = LayoutHomeListBinding.inflate(inflater, parent, false)
+        val binding = ListItem1Binding.inflate(inflater, parent, false)
 
         return ViewHolder(binding.root, binding, mContext)
 
@@ -53,14 +53,14 @@ class HomeListAdapter(context: Context) :
 
     class ViewHolder(
         itemView: View,
-        binding: LayoutHomeListBinding,
+        binding: ListItem1Binding,
         context: Context
     ) : RecyclerView.ViewHolder(itemView) {
 
         private var mBinding = binding
         private var mContext = context
 
-        fun setData(datasBean: DatasBean) {
+        fun setData(datasBean: com.ytech.model.DatasBean) {
             mBinding.feed = datasBean
 
             mBinding.parentItem.setOnClickListener {

@@ -5,11 +5,11 @@
 
     <data>
 
-        <import type="com.ytech.knowledge.knowledge.model.TreeData"></import>
+        <import type="com.ytech.model.knowledge.TreeData"></import>
 
         <variable
             name="treeData"
-            type="TreeData" />
+            type="com.ytech.model.knowledge.TreeData" />
 
     </data>
 

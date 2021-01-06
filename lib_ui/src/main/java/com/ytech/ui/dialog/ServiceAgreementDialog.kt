@@ -3,6 +3,7 @@ package com.ytech.ui.dialog
 import android.content.Context
 import android.graphics.Color
 import android.view.View.OnClickListener
+import androidx.core.content.ContextCompat
 import com.lxj.xpopup.core.CenterPopupView
 import com.lxj.xpopup.util.XPopupUtils
 import com.ytech.common.text.clickSpan
@@ -40,7 +41,7 @@ class ServiceAgreementDialog(context: Context) : CenterPopupView(context) {
         val index = content.indexOf(serviceAgreement)
         mTvContent.clickSpan(content,
             index..index + serviceAgreement.length,
-            color = Color.parseColor("#077DF6"),
+            color =  ContextCompat.getColor(context,R.color.secondaryColor),
             clickListener = OnClickListener {
                 mOnServiceAgreementClick?.invoke(this)
             })

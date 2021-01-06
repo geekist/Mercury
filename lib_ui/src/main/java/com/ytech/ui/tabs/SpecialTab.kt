@@ -19,8 +19,8 @@ class SpecialTab : BaseTabItem {
     private var mDefaultDrawable: Drawable? = null
     private var mCheckedDrawable: Drawable? = null
 
-    private var mDefaultTextColor = loadColor(R.color.textColor9B)
-    private var mCheckedTextColor = loadColor(R.color.cmn_ui_primary_color)
+    private var mDefaultTextColor = loadColor(R.color.text_subtitle)
+    private var mCheckedTextColor = loadColor(R.color.secondaryColor)
 
     private var mChecked: Boolean = false
 
@@ -43,6 +43,12 @@ class SpecialTab : BaseTabItem {
     fun initialize(@DrawableRes drawableRes: Int, @DrawableRes checkedDrawableRes: Int, title: String) {
         mDefaultDrawable = ContextCompat.getDrawable(context, drawableRes)
         mCheckedDrawable = ContextCompat.getDrawable(context, checkedDrawableRes)
+        mTitle.text = title
+    }
+
+    fun initialize(drawableRes: Drawable, checkedDrawableRes: Drawable, title: String) {
+        mDefaultDrawable = drawableRes
+        mCheckedDrawable = checkedDrawableRes
         mTitle.text = title
     }
 

@@ -8,23 +8,23 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.ytech.apply.applydetail.model.ProjectItemSub
+import com.ytech.model.apply.ProjectItemSub
 import com.ytech.apply.databinding.NavigationPageLayoutBinding
 import com.ytech.core.GlobalConfig
 
 class PeojectPageAdapter constructor(context: Context) :
-    PagedListAdapter<ProjectItemSub, PeojectPageAdapter.ViewHolder>(
-        object : DiffUtil.ItemCallback<ProjectItemSub>() {
+    PagedListAdapter<com.ytech.model.apply.ProjectItemSub, PeojectPageAdapter.ViewHolder>(
+        object : DiffUtil.ItemCallback<com.ytech.model.apply.ProjectItemSub>() {
             override fun areItemsTheSame(
-                oldItem: ProjectItemSub,
-                newItem: ProjectItemSub
+                oldItem: com.ytech.model.apply.ProjectItemSub,
+                newItem: com.ytech.model.apply.ProjectItemSub
             ): Boolean {
                 return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(
-                oldItem: ProjectItemSub,
-                newItem: ProjectItemSub
+                oldItem: com.ytech.model.apply.ProjectItemSub,
+                newItem: com.ytech.model.apply.ProjectItemSub
             ): Boolean {
                 return oldItem == oldItem
             }
@@ -57,7 +57,7 @@ class PeojectPageAdapter constructor(context: Context) :
         private val mBinding = binding
         private val mContext = context
 
-        fun setData(item: ProjectItemSub?) {
+        fun setData(item: com.ytech.model.apply.ProjectItemSub?) {
             mBinding.itemData = item
             mBinding.context = mContext
 

@@ -4,12 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.ytech.core.model.ConvertUtils" />
-        <import type="com.ytech.core.model.DatasBean" />
+        <import type="com.ytech.model.ConvertUtils" />
+        <import type="com.ytech.model.DatasBean" />
 
         <variable
             name="item"
-            type="DatasBean" />
+            type="com.ytech.model.DatasBean" />
     </data>
 
 

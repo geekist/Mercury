@@ -1,7 +1,6 @@
 package com.ytech.apply.applydetail.api
 
-import com.ytech.apply.apply.model.ApplyPageItem
-import com.ytech.apply.apply.model.ProjectTabItem
+import com.ytech.model.apply.ApplyPageItem
 import com.ytech.core.net.model.BaseModel
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -13,6 +12,6 @@ interface ApplyItemApiService {
     suspend fun getTabItemPageData(
         @Path("count") count: Int,
         @Query("cid") cid: Int
-    ): BaseModel<ApplyPageItem>
+    ): BaseModel<com.ytech.model.apply.ApplyPageItem>
 
 }

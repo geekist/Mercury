@@ -3,6 +3,7 @@ package com.ytech.core
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import com.hjq.toast.ToastUtils
 import com.ytech.common.common.getAppProcessName
 import com.ytech.core.arouter.ARouterUtils
 import me.yokeyword.fragmentation.Fragmentation
@@ -38,6 +39,8 @@ open class InitApp : Application() {
                 // Bugtags.sendException(e);
             }
             .install()
+
+        ToastUtils.init(this)
     }
 
     override fun attachBaseContext(base: Context?) {

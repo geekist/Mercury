@@ -2,6 +2,7 @@ package com.ytech.ui.tabs
 
 import android.content.Context
 import android.graphics.*
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.AttributeSet
@@ -230,6 +231,12 @@ class BottomRoundNavigation : ConstraintLayout {
         return this
     }
 
+    fun addItem(drawable: Drawable, checkedDrawable: Drawable, title: String): BottomRoundNavigation {
+        val tab = buildTab(drawable = drawable, checkedDrawable = checkedDrawable, title = title)
+        addView(tab)
+        return this
+    }
+
     fun addItem(@DrawableRes animDrawable: Int, title: String): BottomRoundNavigation {
         val tab = buildTab(animDrawable = animDrawable, title = title)
         addView(tab)
@@ -238,6 +245,24 @@ class BottomRoundNavigation : ConstraintLayout {
 
     private fun buildTab(
         @DrawableRes drawable: Int = 0, @DrawableRes checkedDrawable: Int = 0,
+        @DrawableRes animDrawable: Int = 0, title: String
+    ): SpecialTab {
+        val specialTab = SpecialTab(context)
+        specialTab.id = View.generateViewId()
+        specialTab.tag = buildTabIndex()
+        if (animDrawable != 0) {
+            specialTab.initialize(animDrawable, title)
+        } else {
+            specialTab.initialize(drawable, checkedDrawable, title)
+        }
+
+        specialTab.setOnClickListener { onClickTab(it as SpecialTab) }
+        return specialTab
+    }
+
+    private fun buildTab(
+        drawable: Drawable,
+        checkedDrawable: Drawable,
         @DrawableRes animDrawable: Int = 0, title: String
     ): SpecialTab {
         val specialTab = SpecialTab(context)

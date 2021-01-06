@@ -6,4 +6,18 @@
     <dimen name="common_line_spacing_extra_small">2dp</dimen>
     <dimen name="common_divider">0.5dp</dimen>
     <dimen name="common_setting_header_height">56dp</dimen>
+
+    <dimen name="headline_1">96sp</dimen>
+    <dimen name="headline_2">60sp</dimen>
+    <dimen name="headline_3">48sp</dimen>
+    <dimen name="headline_4">34sp</dimen>
+    <dimen name="headline_5">24sp</dimen>
+    <dimen name="headline_6">20sp</dimen>
+    <dimen name="subtitle_1">16sp</dimen>
+    <dimen name="subtitle_2">14sp</dimen>
+    <dimen name="body_1">16sp</dimen>
+    <dimen name="body_2">14sp</dimen>
+    <dimen name="button">14sp</dimen>
+    <dimen name="caption">12sp</dimen>
+    <dimen name="overline">10sp</dimen>
 </resources>

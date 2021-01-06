@@ -17,7 +17,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
-import com.ytech.core.model.DatasBean
+import com.ytech.model.DatasBean
 import com.ytech.home.R
 import com.ytech.home.databinding.AbcListLayoutBinding
 import com.ytech.home.homelist.adapter.HomeListAdapter
@@ -28,7 +28,7 @@ class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListene
     private lateinit var mBinding: AbcListLayoutBinding
     lateinit var mViewModel: HomeListViewModel
 
-    lateinit var mAdapter: PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
+    lateinit var mAdapter: PagedListAdapter<com.ytech.model.DatasBean, RecyclerView.ViewHolder>
     private lateinit var mRefreshLayout: SmartRefreshLayout
     private lateinit var mRecycleView: RecyclerView
 
@@ -62,7 +62,7 @@ class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListene
 
     private fun initData() {
         mAdapter =
-            HomeListAdapter(context!!) as PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
+            HomeListAdapter(context!!) as PagedListAdapter<com.ytech.model.DatasBean, RecyclerView.ViewHolder>
         mRecycleView.adapter = mAdapter
 
         mViewModel = ViewModelProvider(this).get(HomeListViewModel::class.java)
@@ -115,11 +115,11 @@ class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListene
         mViewModel.getHomeList(
             key,
             key + 1,
-            object : PageKeyedDataSource.LoadCallback<Int, DatasBean>() {
-                override fun onResult(data: MutableList<DatasBean>, adjacentPageKey: Int?) {
+            object : PageKeyedDataSource.LoadCallback<Int, com.ytech.model.DatasBean>() {
+                override fun onResult(data: MutableList<com.ytech.model.DatasBean>, adjacentPageKey: Int?) {
 
                     //把data转成pageList
-                    val dataSource = MutablePageKeyedDataSource<DatasBean>()
+                    val dataSource = MutablePageKeyedDataSource<com.ytech.model.DatasBean>()
 
                     dataSource.data.addAll(currentList)
                     dataSource.data.addAll(data)

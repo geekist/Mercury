@@ -1,6 +1,6 @@
 package com.ytech.account.api
 
-import com.ytech.core.model.User
+import com.ytech.model.User
 import com.ytech.core.net.model.BaseModel
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -12,7 +12,7 @@ interface AccountApiService {
     suspend fun login(
         @Field("username") username: String,
         @Field("password") password: String
-    ): BaseModel<User>
+    ): BaseModel<com.ytech.model.User>
 
     @FormUrlEncoded
     @POST("/user/register")
@@ -20,5 +20,5 @@ interface AccountApiService {
         @Field("username") username: String,
         @Field("password") password: String,
         @Field("repassword") repassword: String
-    ): BaseModel<User>
+    ): BaseModel<com.ytech.model.User>
 }

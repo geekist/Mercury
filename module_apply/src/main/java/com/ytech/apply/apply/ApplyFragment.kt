@@ -17,7 +17,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ytech.apply.R
-import com.ytech.apply.apply.model.ProjectTabItem
+import com.ytech.model.apply.ProjectTabItem
 import com.ytech.apply.applydetail.ApplyItemFragment
 import com.ytech.apply.databinding.FragmentApplyBinding
 import com.ytech.core.arouter.ARouterConstant
@@ -29,7 +29,7 @@ class ApplyFragment : SupportFragment() {
     lateinit var mViewModel: ProjectViewModel
     lateinit var mViewBinding: FragmentApplyBinding
 
-    private var mData: MutableList<ProjectTabItem>? = null
+    private var mData: MutableList<com.ytech.model.apply.ProjectTabItem>? = null
     private lateinit var mediator: TabLayoutMediator
     private lateinit var mTabLayout: TabLayout
     private lateinit var mViewPager: ViewPager2

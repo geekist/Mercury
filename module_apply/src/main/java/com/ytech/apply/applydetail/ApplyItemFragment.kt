@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.paging.PageKeyedDataSource
-import androidx.paging.PagedList
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,10 +18,10 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.ytech.apply.R
+import com.ytech.apply.apply.MutablePageKeyedDataSource
 import com.ytech.apply.applydetail.adapter.PeojectPageAdapter
-import com.ytech.apply.applydetail.model.MutablePageKeyedDataSource
-import com.ytech.apply.applydetail.model.ProjectItemSub
 import com.ytech.apply.databinding.AbsListLayoutBinding
+import com.ytech.model.apply.ProjectItemSub
 import com.ytech.ui.base.SupportFragment
 
 class ApplyItemFragment : SupportFragment(), OnRefreshListener,
@@ -41,7 +40,7 @@ class ApplyItemFragment : SupportFragment(), OnRefreshListener,
     private lateinit var mBinding: AbsListLayoutBinding
     lateinit var mViewModel: ApplyItemViewModel
 
-    lateinit var mAdapter: PagedListAdapter<ProjectItemSub, RecyclerView.ViewHolder>
+    lateinit var mAdapter: PagedListAdapter<com.ytech.model.apply.ProjectItemSub, RecyclerView.ViewHolder>
     private lateinit var mRefreshLayout: SmartRefreshLayout
     private lateinit var mRecycleView: RecyclerView
 
@@ -102,7 +101,7 @@ class ApplyItemFragment : SupportFragment(), OnRefreshListener,
 
     private fun initData() {
         mAdapter =
-            PeojectPageAdapter(context!!) as PagedListAdapter<ProjectItemSub, RecyclerView.ViewHolder>
+            PeojectPageAdapter(context!!) as PagedListAdapter<com.ytech.model.apply.ProjectItemSub, RecyclerView.ViewHolder>
         mRecycleView.adapter = mAdapter
 
         mViewModel = ViewModelProvider(this).get(ApplyItemViewModel::class.java)
@@ -132,10 +131,11 @@ class ApplyItemFragment : SupportFragment(), OnRefreshListener,
         val count = currentList.size / 15
 
         mViewModel.getTabPageData(count,
-            object : PageKeyedDataSource.LoadCallback<Int, ProjectItemSub>() {
-                override fun onResult(data: MutableList<ProjectItemSub>, adjacentPageKey: Int?) {
+            object : PageKeyedDataSource.LoadCallback<Int, com.ytech.model.apply.ProjectItemSub>() {
+                override fun onResult(data: MutableList<com.ytech.model.apply.ProjectItemSub>, adjacentPageKey: Int?) {
 
-                    val dataSource = MutablePageKeyedDataSource<ProjectItemSub>()
+                    val dataSource =
+                        MutablePageKeyedDataSource<ProjectItemSub>()
 
                     dataSource.data.addAll(currentList)
                     dataSource.data.addAll(data)

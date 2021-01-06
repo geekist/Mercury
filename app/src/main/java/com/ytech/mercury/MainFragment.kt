@@ -1,22 +1,27 @@
 package com.ytech.mercury
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.core.content.ContextCompat
 import com.hjq.toast.ToastUtils
-import com.ytech.account.login.LoginFragment
+import com.ytech.about.AboutFragment
 import com.ytech.apply.apply.ApplyFragment
+import com.ytech.core.GlobalConfig
 import com.ytech.core.animator.CustomHorizontalAnimator
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.arouter.ARouterUtils
-import com.ytech.ui.base.SupportFragment
 import com.ytech.home.home.HomeFragment
 import com.ytech.knowledge.knowledge.KnowledgeFragment
+import com.ytech.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 import me.yokeyword.fragmentation.anim.DefaultNoAnimator
 
-class MainFragment : SupportFragment() {
+class MainFragment : BaseFragment() {
     companion object {
         const val MODULE_HOME_INDEX = 0
         const val MODULE_APPLY_INDEX = 1
@@ -24,55 +29,56 @@ class MainFragment : SupportFragment() {
         const val MODULE_ABOUT_INDEX = 3
     }
 
-    private val mTitles by lazy { arrayOf("首页", "应用", "知识", "关于") }
+    private val mTitles by lazy { context!!.resources.getStringArray(R.array.bottomNavigation)}
     private var mSelectIndex = 0
 
     private val mFragments by lazy {
         arrayOf(
-            ARouterUtils.obtainFragment(ARouterConstant.ModuleHome.FRAGMENT_HOME),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleApply.FRAGMENT_APPLY),
+            ARouterUtils.obtainFragment(ARouterConstant.ModuleHome.FRAGMENT_HOME),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleAbout.FRAGMENT_ABOUT)
-           // ARouterUtils.obtainFragment(ARouterConstant.ModuleAccount.FRAGMENT_LOGIN)
         )
     }
 
     private var mPressedTime = 0L
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    override fun initRootContainer(): Any {
+        return R.layout.fragment_main
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView(savedInstanceState, view)
     }
 
-    private fun initView(savedInstanceState: Bundle?, rootView: View) {
+     override fun initView(savedInstanceState: Bundle?, rootView: View) {
         mLine.setGuidelineEnd(mTabs.getTabHeight())
         mTabs.addItem(
-            R.drawable.ic_message_unchecked,
-            R.drawable.ic_message_checked,
+            getDrawable(R.drawable.ic_home_white_24dp,R.color.text_subtitle)!!,
+            getDrawable(R.drawable.ic_home_white_24dp,R.color.secondaryColor)!!,
             mTitles[MODULE_HOME_INDEX]
         ).addItem(
-            R.drawable.ic_attendance_unchecked,
-            R.drawable.ic_attendance_checked,
+            getDrawable(R.drawable.ic_project_white_24dp,R.color.text_subtitle)!!,
+            getDrawable(R.drawable.ic_project_white_24dp,R.color.secondaryColor)!!,
             mTitles[MODULE_APPLY_INDEX]
         ).addItem(
-            R.drawable.ic_classroom_unchecked,
-            R.drawable.ic_classroom_checked,
+            getDrawable(R.drawable.ic_apply_white_24dp,R.color.text_subtitle)!!,
+            getDrawable(R.drawable.ic_apply_white_24dp,R.color.secondaryColor)!!,
             mTitles[MODULE_KNOWLEDGE_INDEX]
         ).addItem(
-            R.drawable.ic_student_unchecked,
-            R.drawable.ic_student_checked,
+            getDrawable(R.drawable.ic_about_white_24dp,R.color.text_subtitle)!!,
+            getDrawable(R.drawable.ic_about_white_24dp,R.color.secondaryColor)!!,
             mTitles[MODULE_ABOUT_INDEX]
         ).complete(mSelectIndex)
-
-        initListener()
     }
 
     override fun onEnterAnimationEnd(savedInstanceState: Bundle?) {
@@ -88,7 +94,6 @@ class MainFragment : SupportFragment() {
         val currentTime = System.currentTimeMillis()
         if (currentTime - mPressedTime > 2000) {
             ToastUtils.show("再按一次退出程序")
-            //   fastShow("再按一次退出程序")
             mPressedTime = currentTime
             return true
         }
@@ -96,7 +101,7 @@ class MainFragment : SupportFragment() {
     }
 
     private fun initMultipleRootFragment() {
-        val firstFragment = findChildFragment(HomeFragment::class.java)
+        val firstFragment = findChildFragment(ApplyFragment::class.java)
         when (firstFragment == null) {
             true -> {
                 loadMultipleRootFragment(
@@ -110,16 +115,14 @@ class MainFragment : SupportFragment() {
             }
             else -> {
                 mFragments[MODULE_HOME_INDEX] = firstFragment
-                mFragments[MODULE_APPLY_INDEX] = findChildFragment(ApplyFragment::class.java)
+                mFragments[MODULE_APPLY_INDEX] = findChildFragment(HomeFragment::class.java)
                 mFragments[MODULE_KNOWLEDGE_INDEX] = findChildFragment(KnowledgeFragment::class.java)
-               // mFragments[MODULE_ABOUT_INDEX] = findChildFragment(AboutFragment::class.java)
-
-                mFragments[MODULE_ABOUT_INDEX] = findChildFragment(LoginFragment::class.java)
+                mFragments[MODULE_ABOUT_INDEX] = findChildFragment(AboutFragment::class.java)
             }
         }
     }
 
-    private fun initListener() {
+    override fun initListener() {
         mTabs.setOnItemClick { index, oldIndex ->
             mSelectIndex = index
             showHideFragment(mFragments[index], mFragments[oldIndex])
@@ -130,5 +133,12 @@ class MainFragment : SupportFragment() {
               //  if (fragment is IRefresh) fragment.refresh()
             }
         }
+    }
+
+    private fun getDrawable(@DrawableRes drawableRes: Int,@ColorRes colorRes: Int): Drawable? {
+        val context = GlobalConfig.getApplicationContext()
+        val drawable = ContextCompat.getDrawable(context,drawableRes)
+        drawable?.setTint(ContextCompat.getColor(context,colorRes))
+        return drawable
     }
 }

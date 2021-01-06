@@ -14,7 +14,7 @@ import com.ytech.account.UserManager
 import com.ytech.account.databinding.FragmentLoginBinding
 import com.ytech.account.model.LoginLayoutBean
 import com.ytech.core.arouter.ARouterConstant
-import com.ytech.core.model.User
+import com.ytech.model.User
 import com.ytech.ui.base.SupportFragment
 
 // TODO: Rename parameter arguments, choose names that match
@@ -117,7 +117,7 @@ class LoginFragment : SupportFragment() {
         })
     }
 
-    private fun saveUserInfo(user: User?) {
+    private fun saveUserInfo(user: com.ytech.model.User?) {
         UserManager.saveUser(user)
         //finish()
     }

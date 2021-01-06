@@ -1,34 +1,26 @@
 package com.ytech.knowledge.knowledge.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.alibaba.android.arouter.launcher.ARouter
-import com.ytech.common.common.buildBundle
-import com.ytech.core.arouter.ARouterConstant
-import com.ytech.core.arouter.ARouterUtils
 import com.ytech.knowledge.R
 import com.ytech.knowledge.databinding.TreeListItemBinding
-import com.ytech.knowledge.knowledge.model.TreeData
-import com.ytech.knowledge.knowledge.model.TreeDataItem
-import com.ytech.ui.base.SupportFragment
+import com.ytech.model.knowledge.TreeData
+import com.ytech.model.knowledge.TreeDataItem
 import com.ytech.ui.widget.flowlayout.TagAdapter
-import me.yokeyword.fragmentation.ISupportFragment
 
-class KnowledgeAdapter(context: Context, data: MutableList<TreeData>) :
+class KnowledgeAdapter(context: Context, data: MutableList<com.ytech.model.knowledge.TreeData>) :
     RecyclerView.Adapter<KnowledgeAdapter.ViewHolder>() {
 
     private val mContext = context
-    private var mData: MutableList<TreeData> = data
+    private var mData: MutableList<com.ytech.model.knowledge.TreeData> = data
 
-    private var mOnItemClickListener: ((treeData: TreeDataItem, position: Int) -> Unit)? = null
-    fun mOnItemClickListener(l: (treeData:TreeDataItem,position: Int) -> Unit) {
+    private var mOnItemClickListener: ((treeData: com.ytech.model.knowledge.TreeDataItem, position: Int) -> Unit)? = null
+    fun mOnItemClickListener(l: (treeData: com.ytech.model.knowledge.TreeDataItem, position: Int) -> Unit) {
         this.mOnItemClickListener = l
     }
 
@@ -58,7 +50,7 @@ class KnowledgeAdapter(context: Context, data: MutableList<TreeData>) :
         private val mBinding = binding
 
         fun setData(
-            treeDataItem: TreeData,
+            treeDataItem: com.ytech.model.knowledge.TreeData,
             mContext: Context
         ) {
 

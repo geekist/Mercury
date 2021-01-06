@@ -1,5 +1,7 @@
 com/ytech/core/BR.java
  com.ytech.core.BR
+com/ytech/ui/BR.java
+ com.ytech.ui.BR
 com/ytech/knowledge/DataBindingTriggerClass.java
  com.ytech.knowledge.DataBindingTriggerClass
 com/ytech/knowledge/databinding/TreeListItemBindingImpl.java

@@ -84,7 +84,9 @@ dependencies {
 
 
 
-    api project(":lib_ui")
+    compileOnly project(":lib_ui")
+    compileOnly project(":lib_common")
+    compileOnly project(":lib_model")
 
 
 

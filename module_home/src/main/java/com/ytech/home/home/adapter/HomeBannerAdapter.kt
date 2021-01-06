@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.youth.banner.adapter.BannerAdapter
 import com.ytech.core.GlobalConfig
-import com.ytech.home.home.model.Banner
+import com.ytech.model.home.Banner
 
-class HomeBannerAdapter(dataList: List<Banner>)//设置数据，也可以调用banner提供的方法,或者自己在adapter中实现
-    : BannerAdapter<Banner, HomeBannerAdapter.BannerViewHolder>(dataList) {
+class HomeBannerAdapter(dataList: List<com.ytech.model.home.Banner>)//设置数据，也可以调用banner提供的方法,或者自己在adapter中实现
+    : BannerAdapter<com.ytech.model.home.Banner, HomeBannerAdapter.BannerViewHolder>(dataList) {
 
     //创建ViewHolder，可以用viewType这个字段来区分不同的ViewHolder
     override fun onCreateHolder(parent: ViewGroup, viewType: Int): BannerViewHolder {
@@ -23,7 +23,7 @@ class HomeBannerAdapter(dataList: List<Banner>)//设置数据，也可以调用b
         return BannerViewHolder(imageView)
     }
 
-    override fun onBindView(holder: BannerViewHolder, data: Banner, position: Int, size: Int) {
+    override fun onBindView(holder: BannerViewHolder, data: com.ytech.model.home.Banner, position: Int, size: Int) {
         Glide.with(GlobalConfig.getApplicationContext())
             .asBitmap()
             .load(data.imagePath)

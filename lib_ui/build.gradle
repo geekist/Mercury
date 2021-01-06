@@ -33,6 +33,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -43,6 +48,11 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    //只是编译进去的话，viewmodelProvider通不过
+    implementation rootProject.ext.dependencies.lifecycleExt
+    implementation rootProject.ext.dependencies.lifecycleViewmodelKtx
 
     api rootProject.ext.dependencies["constraintlayout"]
 
@@ -57,5 +67,7 @@ dependencies {
 
     api rootProject.ext.dependencies["immersion-bar"]
 
-    api project(":lib_common")
+    compileOnly project(":lib_common")
+    compileOnly project(":lib_model")
+
 }

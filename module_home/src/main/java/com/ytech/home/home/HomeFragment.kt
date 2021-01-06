@@ -13,7 +13,7 @@ import com.ytech.core.arouter.ARouterConstant
 import com.ytech.home.R
 import com.ytech.home.databinding.FragmentHomeBinding
 import com.ytech.home.home.adapter.HomeBannerAdapter
-import com.ytech.home.home.model.Banner
+import com.ytech.model.home.Banner
 import com.ytech.home.homelist.HomeListFragment
 import com.ytech.ui.base.SupportFragment
 
@@ -56,7 +56,7 @@ class HomeFragment : SupportFragment() {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.getBanner()
         homeViewModel.getBannerLiveData().observe(viewLifecycleOwner,
-            Observer<List<Banner>> {
+            Observer<List<com.ytech.model.home.Banner>> {
                 fragmentHomeBinding.banner.adapter = HomeBannerAdapter(it)
             })
     }

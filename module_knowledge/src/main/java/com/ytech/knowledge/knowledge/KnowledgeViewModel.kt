@@ -6,15 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ytech.core.GlobalConfig
 import com.ytech.core.net.model.NetResult
-import com.ytech.knowledge.knowledge.model.TreeData
+import com.ytech.model.knowledge.TreeData
 import kotlinx.coroutines.launch
 
 
 class KnowledgeViewModel() : ViewModel() {
 
-    private val knowledgeLiveData = MutableLiveData<MutableList<TreeData>>()
+    private val knowledgeLiveData = MutableLiveData<MutableList<com.ytech.model.knowledge.TreeData>>()
 
-    fun getKnowledgeLiveData(): MutableLiveData<MutableList<TreeData>> {
+    fun getKnowledgeLiveData(): MutableLiveData<MutableList<com.ytech.model.knowledge.TreeData>> {
         return knowledgeLiveData
     }
 

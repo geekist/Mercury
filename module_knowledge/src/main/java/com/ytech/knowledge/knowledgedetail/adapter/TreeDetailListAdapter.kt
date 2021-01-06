@@ -8,24 +8,24 @@ import androidx.databinding.DataBindingUtil
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ytech.core.model.DatasBean
+import com.ytech.model.DatasBean
 import com.ytech.knowledge.R
 import com.ytech.knowledge.databinding.TreeDetailListItemBinding
 
 
-class TreeDetailListAdapter(context: Context) : PagedListAdapter<DatasBean, TreeDetailListAdapter.ViewHolder>(
+class TreeDetailListAdapter(context: Context) : PagedListAdapter<com.ytech.model.DatasBean, TreeDetailListAdapter.ViewHolder>(
 
-    object : DiffUtil.ItemCallback<DatasBean>() {
+    object : DiffUtil.ItemCallback<com.ytech.model.DatasBean>() {
             override fun areItemsTheSame(
-                oldItem: DatasBean,
-                newItem: DatasBean
+                oldItem: com.ytech.model.DatasBean,
+                newItem: com.ytech.model.DatasBean
             ): Boolean {
                 return oldItem == newItem
             }
 
             override fun areContentsTheSame(
-                oldItem: DatasBean,
-                newItem: DatasBean
+                oldItem: com.ytech.model.DatasBean,
+                newItem: com.ytech.model.DatasBean
             ): Boolean {
                 return oldItem.id == newItem.id
             }
@@ -58,7 +58,7 @@ class TreeDetailListAdapter(context: Context) : PagedListAdapter<DatasBean, Tree
 
         private val mBinding = binding
 
-        fun setData(item: DatasBean) {
+        fun setData(item: com.ytech.model.DatasBean) {
             mBinding.item = item
 
             mBinding.itemParent.setOnClickListener {

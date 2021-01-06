@@ -29,10 +29,6 @@ abstract class BaseFragment : SupportFragment(), ImmersionOwner, Toolbar.OnMenuI
     private val mImmersionBar: ImmersionBar by lazy { ImmersionBar.with(this) }
     private var mSupportStatusBarDarkFontFlag = true
 
-    abstract fun initView(savedInstanceState: Bundle?, rootView: View)
-
-    protected abstract fun initRootContainer(): Any
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mImmersionProxy.onCreate(savedInstanceState)
@@ -95,6 +91,10 @@ abstract class BaseFragment : SupportFragment(), ImmersionOwner, Toolbar.OnMenuI
     }
 
     /************************  子类重载的方法 ***********************/
+    abstract fun initView(savedInstanceState: Bundle?, rootView: View)
+
+    protected abstract fun initRootContainer(): Any
+
     open fun initData() {}
 
     open fun initListener() {}

@@ -1,7 +1,6 @@
 package com.ytech.mercury.splash
 
 import android.os.Bundle
-import android.util.Log
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
@@ -11,7 +10,6 @@ import com.ytech.common.common.getAppVersionName
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.arouter.ARouterUtils
 import com.ytech.mercury.R
-import com.ytech.util.json.JsonUtils
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {

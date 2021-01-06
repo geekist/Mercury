@@ -1,7 +1,6 @@
 package com.ytech.knowledge.knowledge
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,6 @@ import com.ytech.ui.base.SupportFragment
 import com.ytech.knowledge.R
 import com.ytech.knowledge.databinding.FragmentKnowledgeBinding
 import com.ytech.knowledge.knowledge.adapter.KnowledgeAdapter
-import com.ytech.knowledge.knowledge.model.TreeData
 
 @Route(path = ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE)
 class KnowledgeFragment : SupportFragment() {

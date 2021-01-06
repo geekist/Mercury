@@ -29,7 +29,7 @@
         app:brn_is_linear="true"
         app:brn_shadow_color="#dfdfdf"
         app:brn_shadow_radius="1dp"
-        app:brn_tab_height="50.5dp"
+        app:brn_tab_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

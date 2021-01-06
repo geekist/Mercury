@@ -20,7 +20,7 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.ytech.core.arouter.ARouterConstant
-import com.ytech.core.model.DatasBean
+import com.ytech.model.DatasBean
 import com.ytech.knowledge.R
 import com.ytech.knowledge.databinding.FragmentKnowledgeDetailBinding
 import com.ytech.knowledge.knowledgedetail.adapter.TreeDetailListAdapter
@@ -41,7 +41,7 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
 
     private lateinit var mRefreshLayout: SmartRefreshLayout
     private lateinit var mRecycleView: RecyclerView
-    lateinit var mAdapter: PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
+    lateinit var mAdapter: PagedListAdapter<com.ytech.model.DatasBean, RecyclerView.ViewHolder>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         ARouter.getInstance().inject(this)
@@ -77,7 +77,7 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
 
     private fun initData() {
         mAdapter =
-            TreeDetailListAdapter(context!!)  as PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
+            TreeDetailListAdapter(context!!)  as PagedListAdapter<com.ytech.model.DatasBean, RecyclerView.ViewHolder>
         mRecycleView.adapter = mAdapter
 
         treeDetailViewModel = ViewModelProvider(this).get(TreeDetailViewModel::class.java)

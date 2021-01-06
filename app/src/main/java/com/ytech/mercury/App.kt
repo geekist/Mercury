@@ -16,6 +16,5 @@ class App : InitApp() {
 
     override fun onTerminate() {
         super.onTerminate()
-
     }
 }

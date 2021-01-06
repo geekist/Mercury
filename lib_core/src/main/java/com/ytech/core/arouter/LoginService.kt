@@ -3,18 +3,18 @@ package com.ytech.core.arouter
 import android.content.Context
 import androidx.lifecycle.LiveData
 import com.alibaba.android.arouter.facade.template.IProvider
-import com.ytech.core.model.User
+import com.ytech.model.User
 
 interface LoginService : IProvider {
 
     fun isLogin(): Boolean
 
-    fun getUserInfo(): User?
+    fun getUserInfo(): com.ytech.model.User?
 
     fun removeUserInfo()
 
-    fun start(context: Context): LiveData<User>
+    fun start(context: Context): LiveData<com.ytech.model.User>
 
-    fun getLiveData(): LiveData<User>
+    fun getLiveData(): LiveData<com.ytech.model.User>
 
 }

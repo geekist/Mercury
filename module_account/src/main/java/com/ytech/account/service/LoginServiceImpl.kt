@@ -2,10 +2,9 @@ package com.win.ft_login.service
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.alibaba.android.arouter.facade.annotation.Route
 import com.ytech.account.UserManager
 import com.ytech.core.arouter.LoginService
-import com.ytech.core.model.User
+import com.ytech.model.User
 
 //@Route(path = ConstantsPath.LOGIN_SERVICE_PATH)
 class LoginServiceImpl : LoginService {
@@ -14,7 +13,7 @@ class LoginServiceImpl : LoginService {
         return UserManager.isLogin()
     }
 
-    override fun getUserInfo(): User? {
+    override fun getUserInfo(): com.ytech.model.User? {
         return UserManager.getUser()
     }
 
@@ -22,11 +21,11 @@ class LoginServiceImpl : LoginService {
         UserManager.removeUser()
     }
 
-    override fun start(context: Context): LiveData<User> {
+    override fun start(context: Context): LiveData<com.ytech.model.User> {
         return UserManager.start(context)
     }
 
-    override fun getLiveData(): LiveData<User> {
+    override fun getLiveData(): LiveData<com.ytech.model.User> {
         return UserManager.getLoginLiveData()
     }
 
