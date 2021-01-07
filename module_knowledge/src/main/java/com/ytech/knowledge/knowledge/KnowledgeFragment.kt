@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.arouter.ARouterUtils
-import com.ytech.ui.base.SupportFragment
 import com.ytech.knowledge.R
+import com.ytech.ui.base.SupportFragment
 import com.ytech.knowledge.databinding.FragmentKnowledgeBinding
 import com.ytech.knowledge.knowledge.adapter.KnowledgeAdapter
 
@@ -52,14 +52,14 @@ class KnowledgeFragment : SupportFragment() {
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        val decoration = DividerItemDecoration(activity, DividerItemDecoration.VERTICAL)
-        decoration.setDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.home_list_divider
-            )!!
-        )
-        recyclerView.addItemDecoration(decoration)
+//        val decoration = DividerItemDecoration(activity, DividerItemDecoration.VERTICAL)
+//        decoration.setDrawable(
+//            ContextCompat.getDrawable(
+//                requireContext(),
+//             R.drawable.home_list_divider
+//            )!!
+//        )
+//        recyclerView.addItemDecoration(decoration)
     }
 
     private fun initData() {

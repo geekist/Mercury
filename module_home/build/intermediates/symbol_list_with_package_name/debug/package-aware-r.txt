@@ -1286,7 +1286,6 @@ color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
 color abc_tint_switch_track
-color accent
 color accent_material_dark
 color accent_material_light
 color action_item_solid
@@ -1339,7 +1338,6 @@ color cmn_ui_primary_color_dark
 color cmn_ui_primary_color_disable
 color cmn_ui_primary_color_stroke
 color cmn_ui_primary_color_text
-color colorAccent
 color colorAccentAlpha60
 color colorGray03
 color colorGray111
@@ -1354,8 +1352,6 @@ color colorGrayccc
 color colorGrayccc_3
 color colorGrayccc_6
 color colorGrayccc_9
-color colorPrimary
-color colorPrimaryDark
 color colorPrimary_6
 color colorTextPrimary
 color colorTextPrimaryDark
@@ -1426,7 +1422,6 @@ color highlighted_text_material_dark
 color highlighted_text_material_light
 color hint_foreground_material_dark
 color hint_foreground_material_light
-color icons
 color light_green
 color light_green_1
 color load_failure
@@ -1523,19 +1518,15 @@ color permissionx_default_dialog_bg
 color permissionx_split_line
 color permissionx_text_color
 color permissionx_tint_color
-color primary
 color primaryColor
 color primaryDarkColor
 color primaryLightColor
 color primaryTextColor
 color primary_blue
-color primary_dark
 color primary_dark_material_dark
 color primary_dark_material_light
-color primary_light
 color primary_material_dark
 color primary_material_light
-color primary_text
 color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
@@ -1547,7 +1538,6 @@ color secondaryColor
 color secondaryDarkColor
 color secondaryLightColor
 color secondaryTextColor
-color secondary_text
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -1576,7 +1566,6 @@ color text_time
 color text_title
 color tooltip_background_dark
 color tooltip_background_light
-color transparent
 color white
 color whiteAlpha10
 color whiteAlpha20
@@ -2086,11 +2075,11 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable about_bg
 drawable animation_loading
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
-drawable bg
 drawable brvah_sample_footer_loading
 drawable brvah_sample_footer_loading_progress
 drawable btn_checkbox_checked_mtrl
@@ -2141,6 +2130,8 @@ drawable ic_project_white_24dp
 drawable ic_splash_bg
 drawable ic_student_checked
 drawable ic_student_unchecked
+drawable ic_title_back_black
+drawable img_placeholder
 drawable logo
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2380,6 +2371,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id immersion_fits_layout_overlap
 id immersion_navigation_bar_view
 id immersion_status_bar_view
 id info
@@ -2764,7 +2756,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_home
-layout fragment_home_list
 layout fragment_web_client
 layout include_viewpager
 layout layout_tab
@@ -3114,11 +3105,9 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
-style AppTheme
 style AppTheme_AppBarOverlay
 style AppTheme_AppBarOverlay_Dark
 style AppTheme_Launcher
-style AppTheme_NoActionBar
 style AppTheme_Splash
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light

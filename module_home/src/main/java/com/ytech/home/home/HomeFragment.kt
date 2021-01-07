@@ -56,7 +56,7 @@ class HomeFragment : SupportFragment() {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.getBanner()
         homeViewModel.getBannerLiveData().observe(viewLifecycleOwner,
-            Observer<List<com.ytech.model.home.Banner>> {
+            Observer<List<Banner>> {
                 fragmentHomeBinding.banner.adapter = HomeBannerAdapter(it)
             })
     }

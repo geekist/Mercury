@@ -11,15 +11,15 @@ import kotlinx.coroutines.launch
 
 class ProjectViewModel() : ViewModel() {
 
-    private val tabDataLiveData = MutableLiveData<MutableList<com.ytech.model.apply.ProjectTabItem>>()
+    private val tabDataLiveData = MutableLiveData<MutableList<ProjectTabItem>>()
 
-    fun getTabDataLiveData(): MutableLiveData<MutableList<com.ytech.model.apply.ProjectTabItem>> {
+    fun getTabDataLiveData(): MutableLiveData<MutableList<ProjectTabItem>> {
         return tabDataLiveData
     }
 
     fun getTabData(): MutableLiveData<MutableList<com.ytech.model.apply.ProjectTabItem>> {
         viewModelScope.launch {
-            when(val tabData = ProjectRepository.getTabData()) {
+            when (val tabData = ProjectRepository.getTabData()) {
                 is NetResult.Success -> tabDataLiveData.postValue(tabData.data)
                 is NetResult.Error -> ToastUtils.show(tabData.exception.msg)
             }

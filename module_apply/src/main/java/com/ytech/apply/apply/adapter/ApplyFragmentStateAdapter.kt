@@ -4,29 +4,25 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.ytech.model.apply.ProjectTabItem
 import com.ytech.apply.applydetail.ApplyItemFragment
+import com.ytech.model.apply.ProjectTabItem
 
 class ApplyFragmentStateAdapter(
-    private val mData: MutableList<com.ytech.model.apply.ProjectTabItem>,
+    private val mData: MutableList<ProjectTabItem>,
     childFragmentManager: FragmentManager,
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(childFragmentManager, lifecycle) {
 
     override fun getItemCount(): Int {
-        if (mData != null && mData!!.size > 0) {
-            return mData!!.size
+        if (mData.size > 0) {
+            return mData.size
         }
         return 0
     }
 
     override fun createFragment(position: Int): Fragment {
-        val item = mData!![position]
-        return createItemFragment(item.id)
-    }
-
-    private fun createItemFragment(id: Int): Fragment {
-        return ApplyItemFragment.newInstance(id)
+        val item = mData[position]
+        return ApplyItemFragment.newInstance(item.id)
     }
 }
 

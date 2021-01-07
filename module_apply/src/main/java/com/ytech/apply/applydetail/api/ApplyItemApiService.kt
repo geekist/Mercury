@@ -12,6 +12,5 @@ interface ApplyItemApiService {
     suspend fun getTabItemPageData(
         @Path("count") count: Int,
         @Query("cid") cid: Int
-    ): BaseModel<com.ytech.model.apply.ApplyPageItem>
-
+    ): BaseModel<ApplyPageItem>
 }

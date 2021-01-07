@@ -23,14 +23,13 @@ object UrlConstant {
         else
             BASE_H5_URL_RELEASE
 
-    const val BASE_URL_TEST = "https://www.wanandroid.com/user/login"
-
-
     // 发行版url
     private const val BASE_URL_RELEASE = "https://www.wanandroid.com"
 
     // 测试版url
     private const val BASE_URL_DEBUG = "https://www.wanandroid.com"
+
+    const val BASE_URL_TEST = "https://www.wanandroid.com/user/login"
 
 
     const val MESSAGE_BASE_URL_RELEASE = "http://message.iyuya.com/api"

@@ -1,15 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 drawable edittext_cursor_color
-drawable home_list_divier
-id actionBar
 id banner
 id homeListContainer
-id mIvBack
-id mTvTitle
-id recycleView
-id refreshLayout
-layout abc_list_layout
 layout fragment_home
-layout fragment_home_list
 string hello_blank_fragment

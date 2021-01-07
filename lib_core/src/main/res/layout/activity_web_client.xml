@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:padding="8dp"
-            android:src="@drawable/close"
+            android:src="@drawable/ic_title_back_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,16 +55,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#dcdcdc" />
 
-
     <WebView
         android:id="@+id/mWebView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

@@ -17,18 +17,20 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
+import com.ytech.common.device.dp2px
 import com.ytech.model.DatasBean
 import com.ytech.home.R
-import com.ytech.home.databinding.AbcListLayoutBinding
 import com.ytech.home.homelist.adapter.HomeListAdapter
 import com.ytech.ui.base.SupportFragment
+import com.ytech.ui.databinding.AbcListLayoutBinding
+import com.ytech.ui.view.RecyclerViewDivider
 
 class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListener {
 
     private lateinit var mBinding: AbcListLayoutBinding
     lateinit var mViewModel: HomeListViewModel
 
-    lateinit var mAdapter: PagedListAdapter<com.ytech.model.DatasBean, RecyclerView.ViewHolder>
+    lateinit var mAdapter: PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
     private lateinit var mRefreshLayout: SmartRefreshLayout
     private lateinit var mRecycleView: RecyclerView
 
@@ -76,14 +78,11 @@ class HomeListFragment : SupportFragment(), OnRefreshListener, OnLoadMoreListene
         mRecycleView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
-        val decoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
-        decoration.setDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.home_list_divier
-            )!!
-        )
-        mRecycleView.addItemDecoration(decoration)
+        val divider = RecyclerViewDivider(requireContext(),
+            LinearLayoutManager.HORIZONTAL,
+            dp2px(requireContext(), 1.0F),
+            requireContext().resources.getColor(R.color.divider))
+        mRecycleView.addItemDecoration(divider)
     }
 
     private fun initRefreshLayout() {

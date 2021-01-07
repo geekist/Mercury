@@ -1,7 +1,5 @@
 com/ytech/core/BR.java
  com.ytech.core.BR
-com/ytech/home/databinding/AbcListLayoutBindingImpl.java
- com.ytech.home.databinding.AbcListLayoutBindingImpl
 com/ytech/ui/BR.java
  com.ytech.ui.BR
 com/ytech/home/databinding/FragmentHomeBinding.java
@@ -12,16 +10,10 @@ com/ytech/home/DataBinderMapperImpl.java
  com.ytech.home.DataBinderMapperImpl
  com.ytech.home.DataBinderMapperImpl$InnerBrLookup
  com.ytech.home.DataBinderMapperImpl$InnerLayoutIdLookup
-com/ytech/home/databinding/AbcListLayoutBinding.java
- com.ytech.home.databinding.AbcListLayoutBinding
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 com/ytech/home/BuildConfig.java
  com.ytech.home.BuildConfig
-com/ytech/home/databinding/FragmentHomeListBindingImpl.java
- com.ytech.home.databinding.FragmentHomeListBindingImpl
-com/ytech/home/databinding/FragmentHomeListBinding.java
- com.ytech.home.databinding.FragmentHomeListBinding
 com/alibaba/android/arouter/routes/ARouter$$Providers$$module_home.java
  com.alibaba.android.arouter.routes.ARouter$$Providers$$module_home
 com/ytech/home/BR.java

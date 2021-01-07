@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.http.SslError
 import android.os.Bundle
+import android.util.Log
 import android.webkit.*
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -26,6 +27,7 @@ class WebViewActivity : SupportActivity() {
     companion object {
         fun start(context: Context, title: String, url: String) {
             val intent = Intent(context, WebViewActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             intent.putExtra("title", title)
             intent.putExtra("url", url)
             context.startActivity(intent)
@@ -38,18 +40,19 @@ class WebViewActivity : SupportActivity() {
         ARouter.getInstance().inject(this)
 
         StatusBarKt.fitSystemBar(this)
-
         setContentView(R.layout.activity_web_client)
 
-        initActionBar()
-        initWebView()
-
+        initView()
 //        mCollect.setOnClickListener {
-//
 ////            mCollect.imageTintList =
 ////                ColorStateList.valueOf(resources.getColor((R.color.imageView_tint)))
 //
 //        }
+    }
+
+    fun initView() {
+        initActionBar()
+        initWebView()
     }
 
     private fun initActionBar() {
@@ -67,7 +70,6 @@ class WebViewActivity : SupportActivity() {
         settings.allowFileAccess = true
         settings.javaScriptEnabled = true
 
-
         mWebView.addJavascriptInterface(this, "wan")
 
         mWebView.webChromeClient = object : WebChromeClient() {
@@ -75,7 +77,6 @@ class WebViewActivity : SupportActivity() {
         }
 
         mWebView.webViewClient = object : WebViewClient() {
-
             override fun onReceivedSslError(
                 view: WebView?,
                 handler: SslErrorHandler?,
@@ -88,12 +89,11 @@ class WebViewActivity : SupportActivity() {
                 view: WebView?,
                 request: WebResourceRequest?
             ): Boolean {
-
+                Log.d("","")
                 return super.shouldOverrideUrlLoading(view, request)
             }
         }
 
         mWebView.loadUrl(url)
-
     }
 }

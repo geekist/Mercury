@@ -1285,7 +1285,6 @@ int color abc_tint_edittext 0x0
 int color abc_tint_seek_thumb 0x0
 int color abc_tint_spinner 0x0
 int color abc_tint_switch_track 0x0
-int color accent 0x0
 int color accent_material_dark 0x0
 int color accent_material_light 0x0
 int color action_item_solid 0x0
@@ -1338,7 +1337,6 @@ int color cmn_ui_primary_color_dark 0x0
 int color cmn_ui_primary_color_disable 0x0
 int color cmn_ui_primary_color_stroke 0x0
 int color cmn_ui_primary_color_text 0x0
-int color colorAccent 0x0
 int color colorAccentAlpha60 0x0
 int color colorGray03 0x0
 int color colorGray111 0x0
@@ -1353,8 +1351,6 @@ int color colorGrayccc 0x0
 int color colorGrayccc_3 0x0
 int color colorGrayccc_6 0x0
 int color colorGrayccc_9 0x0
-int color colorPrimary 0x0
-int color colorPrimaryDark 0x0
 int color colorPrimary_6 0x0
 int color colorTextPrimary 0x0
 int color colorTextPrimaryDark 0x0
@@ -1425,7 +1421,6 @@ int color highlighted_text_material_dark 0x0
 int color highlighted_text_material_light 0x0
 int color hint_foreground_material_dark 0x0
 int color hint_foreground_material_light 0x0
-int color icons 0x0
 int color light_green 0x0
 int color light_green_1 0x0
 int color load_failure 0x0
@@ -1522,19 +1517,15 @@ int color permissionx_default_dialog_bg 0x0
 int color permissionx_split_line 0x0
 int color permissionx_text_color 0x0
 int color permissionx_tint_color 0x0
-int color primary 0x0
 int color primaryColor 0x0
 int color primaryDarkColor 0x0
 int color primaryLightColor 0x0
 int color primaryTextColor 0x0
 int color primary_blue 0x0
-int color primary_dark 0x0
 int color primary_dark_material_dark 0x0
 int color primary_dark_material_light 0x0
-int color primary_light 0x0
 int color primary_material_dark 0x0
 int color primary_material_light 0x0
-int color primary_text 0x0
 int color primary_text_default_material_dark 0x0
 int color primary_text_default_material_light 0x0
 int color primary_text_disabled_material_dark 0x0
@@ -1546,7 +1537,6 @@ int color secondaryColor 0x0
 int color secondaryDarkColor 0x0
 int color secondaryLightColor 0x0
 int color secondaryTextColor 0x0
-int color secondary_text 0x0
 int color secondary_text_default_material_dark 0x0
 int color secondary_text_default_material_light 0x0
 int color secondary_text_disabled_material_dark 0x0
@@ -1575,7 +1565,6 @@ int color text_time 0x0
 int color text_title 0x0
 int color tooltip_background_dark 0x0
 int color tooltip_background_light 0x0
-int color transparent 0x0
 int color white 0x0
 int color whiteAlpha10 0x0
 int color whiteAlpha20 0x0
@@ -2085,11 +2074,11 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x0
 int drawable abc_textfield_search_default_mtrl_alpha 0x0
 int drawable abc_textfield_search_material 0x0
 int drawable abc_vector_test 0x0
+int drawable about_bg 0x0
 int drawable animation_loading 0x0
 int drawable avatar 0x0
 int drawable avd_hide_password 0x0
 int drawable avd_show_password 0x0
-int drawable bg 0x0
 int drawable brvah_sample_footer_loading 0x0
 int drawable brvah_sample_footer_loading_progress 0x0
 int drawable btn_checkbox_checked_mtrl 0x0
@@ -2140,6 +2129,8 @@ int drawable ic_project_white_24dp 0x0
 int drawable ic_splash_bg 0x0
 int drawable ic_student_checked 0x0
 int drawable ic_student_unchecked 0x0
+int drawable ic_title_back_black 0x0
+int drawable img_placeholder 0x0
 int drawable logo 0x0
 int drawable material_ic_calendar_black_24dp 0x0
 int drawable material_ic_clear_black_24dp 0x0
@@ -2379,6 +2370,7 @@ int id ifRoom 0x0
 int id ignore 0x0
 int id ignoreRequest 0x0
 int id image 0x0
+int id immersion_fits_layout_overlap 0x0
 int id immersion_navigation_bar_view 0x0
 int id immersion_status_bar_view 0x0
 int id info 0x0
@@ -2763,7 +2755,6 @@ int layout design_navigation_menu_item 0x0
 int layout design_text_input_end_icon 0x0
 int layout design_text_input_start_icon 0x0
 int layout fragment_home 0x0
-int layout fragment_home_list 0x0
 int layout fragment_web_client 0x0
 int layout include_viewpager 0x0
 int layout layout_tab 0x0
@@ -3113,11 +3104,9 @@ int style Animation_AppCompat_DropDownUp 0x0
 int style Animation_AppCompat_Tooltip 0x0
 int style Animation_Design_BottomSheetDialog 0x0
 int style Animation_MaterialComponents_BottomSheetDialog 0x0
-int style AppTheme 0x0
 int style AppTheme_AppBarOverlay 0x0
 int style AppTheme_AppBarOverlay_Dark 0x0
 int style AppTheme_Launcher 0x0
-int style AppTheme_NoActionBar 0x0
 int style AppTheme_Splash 0x0
 int style Base_AlertDialog_AppCompat 0x0
 int style Base_AlertDialog_AppCompat_Light 0x0

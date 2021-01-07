@@ -10,9 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.MenuRes
 import androidx.appcompat.widget.Toolbar
-import com.gyf.barlibrary.ImmersionBar
-import com.gyf.barlibrary.ImmersionOwner
-import com.gyf.barlibrary.ImmersionProxy
+import com.gyf.immersionbar.ImmersionBar
+
+
 import com.lxj.xpopup.XPopup
 import com.lxj.xpopup.core.BasePopupView
 import com.ytech.common.common.hasMinimumSdk
@@ -22,21 +22,17 @@ import com.ytech.ui.widget.CollapsingTitleBar
 import com.ytech.ui.widget.TitleBar
 
 /**
- * 所有Fragment的基类，提供Fragmentation、Immersion、Toolbar以及Menu的加载，还提供了一个loading dialog
+ * 所有Fragment的基类，提供Fragmentation、Toolbar以及Menu的加载，还提供了一个loading dialog
  */
-abstract class BaseFragment : SupportFragment(), ImmersionOwner, Toolbar.OnMenuItemClickListener {
-    private val mImmersionProxy: ImmersionProxy by lazy { ImmersionProxy(this) }
-    private val mImmersionBar: ImmersionBar by lazy { ImmersionBar.with(this) }
+abstract class BaseFragment : SupportFragment(),  Toolbar.OnMenuItemClickListener {
     private var mSupportStatusBarDarkFontFlag = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mImmersionProxy.onCreate(savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        mImmersionProxy.onActivityCreated(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -72,13 +68,11 @@ abstract class BaseFragment : SupportFragment(), ImmersionOwner, Toolbar.OnMenuI
 
     override fun onResume() {
         super.onResume()
-        mImmersionProxy.onResume()
     }
 
     override fun onPause() {
         hideSoftInput()
         super.onPause()
-        mImmersionProxy.onPause()
     }
 
     override fun onStop() {
@@ -87,7 +81,6 @@ abstract class BaseFragment : SupportFragment(), ImmersionOwner, Toolbar.OnMenuI
 
     override fun onDestroy() {
         super.onDestroy()
-        mImmersionProxy.onDestroy()
     }
 
     /************************  子类重载的方法 ***********************/
@@ -156,72 +149,4 @@ abstract class BaseFragment : SupportFragment(), ImmersionOwner, Toolbar.OnMenuI
         }
     }
 
-    /********************    Immersion status bar interface    *******************************/
-    open fun supportStatusBarDarkFont(): Boolean = mSupportStatusBarDarkFontFlag
-
-    fun changeSupportStatusBarDarkFont(supportStatusBarDarkFont: Boolean) {
-        mSupportStatusBarDarkFontFlag = supportStatusBarDarkFont
-    }
-
-    override fun initImmersionBar() {
-        refreshImmersionBar(supportStatusBarDarkFont())
-    }
-
-    /**
-     * 懒加载，在view初始化完成之前执行
-     * On lazy after view.
-     */
-    override fun onLazyBeforeView() {
-    }
-
-    /**
-     * 懒加载，在view初始化完成之后执行
-     * On lazy before view.
-     */
-    override fun onLazyAfterView() {
-    }
-
-    /**
-     * Fragment用户可见时候调用
-     * On visible.
-     */
-    override fun onVisible() {
-    }
-
-    /**
-     * Fragment用户不可见时候调用
-     * On invisible.
-     */
-    override fun onInvisible() {
-    }
-
-    open fun refreshImmersionBar(supportStatusBarDarkFont: Boolean) {
-        mImmersionBar.statusBarDarkFont(
-            supportStatusBarDarkFont, if (hasMinimumSdk(Build.VERSION_CODES.M)) 0f else 0.4f
-        ).autoNavigationBarDarkModeEnable(true, 0f)
-            .navigationBarColor(R.color.black).init()
-    }
-
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        mImmersionProxy.isUserVisibleHint = isVisibleToUser
-    }
-
-    override fun onHiddenChanged(hidden: Boolean) {
-        super.onHiddenChanged(hidden)
-        mImmersionProxy.onHiddenChanged(hidden)
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        mImmersionProxy.onConfigurationChanged(newConfig)
-    }
-
-    /**
-     * 是否可以实现沉浸式，当为true的时候才可以执行initImmersionBar方法
-     * Immersion bar enabled boolean.
-     *
-     * @return the boolean
-     */
-    override fun immersionBarEnabled(): Boolean = false
 }

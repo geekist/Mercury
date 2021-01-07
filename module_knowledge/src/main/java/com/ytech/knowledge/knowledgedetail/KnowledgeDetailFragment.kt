@@ -101,7 +101,7 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
         mRecycleView.layoutManager = LinearLayoutManager(context!!, LinearLayoutManager.VERTICAL, false)
         val decoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
 
-        decoration.setDrawable(ContextCompat.getDrawable(context!!, R.drawable.home_list_divider)!!)
+     //   decoration.setDrawable(ContextCompat.getDrawable(context!!, R.drawable.home_list_divider)!!)
         mRecycleView.addItemDecoration(decoration)
     }
 
@@ -112,7 +112,7 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
         }
     }
 
-    /****************************Smart refresh layout interface ***************************************/
+    /****************************  Smart refresh layout interface ***************************************/
     override fun onLoadMore(refreshLayout: RefreshLayout) {
         finishRefresh()
     }

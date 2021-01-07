@@ -34,8 +34,8 @@ class MainFragment : BaseFragment() {
 
     private val mFragments by lazy {
         arrayOf(
-            ARouterUtils.obtainFragment(ARouterConstant.ModuleApply.FRAGMENT_APPLY),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleHome.FRAGMENT_HOME),
+            ARouterUtils.obtainFragment(ARouterConstant.ModuleApply.FRAGMENT_APPLY),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleAbout.FRAGMENT_ABOUT)
         )
@@ -101,7 +101,7 @@ class MainFragment : BaseFragment() {
     }
 
     private fun initMultipleRootFragment() {
-        val firstFragment = findChildFragment(ApplyFragment::class.java)
+        val firstFragment = findChildFragment(HomeFragment::class.java)
         when (firstFragment == null) {
             true -> {
                 loadMultipleRootFragment(
@@ -115,7 +115,7 @@ class MainFragment : BaseFragment() {
             }
             else -> {
                 mFragments[MODULE_HOME_INDEX] = firstFragment
-                mFragments[MODULE_APPLY_INDEX] = findChildFragment(HomeFragment::class.java)
+                mFragments[MODULE_APPLY_INDEX] = findChildFragment(ApplyFragment::class.java)
                 mFragments[MODULE_KNOWLEDGE_INDEX] = findChildFragment(KnowledgeFragment::class.java)
                 mFragments[MODULE_ABOUT_INDEX] = findChildFragment(AboutFragment::class.java)
             }

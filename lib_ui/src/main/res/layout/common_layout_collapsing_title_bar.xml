@@ -7,7 +7,7 @@
         android:id="@+id/mCollapsingToolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:contentScrim="@color/transparent"
+        app:contentScrim="@color/black"
         app:layout_scrollFlags="scroll|exitUntilCollapsed"
         app:titleEnabled="false">
 

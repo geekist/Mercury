@@ -45,7 +45,7 @@
         app:bl_pressed_solid_color="@color/colorGrayccc_3"
         app:bl_stroke_color="@color/cmn_ui_primary_color"
         app:bl_stroke_width="1dp"
-        app:bl_unPressed_solid_color="@color/transparent"
+        app:bl_unPressed_solid_color="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

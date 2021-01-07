@@ -4,7 +4,7 @@ package com.ytech.model
 data class DatasBean(
     val niceDate: String,
     val title: String,
-    val desc: String,
+    var desc: String,
     val author: String,
     val shareUser: String,
     val id: Int,

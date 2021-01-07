@@ -8,19 +8,18 @@
 
         <variable
             name="itemData"
-            type="com.ytech.model.apply.ProjectItemSub" />
+            type="ProjectItemSub" />
 
         <variable
             name="context"
             type="android.content.Context" />
-
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp">
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
 
         <ImageView
             android:id="@+id/pic"
@@ -28,7 +27,8 @@
             android:layout_height="200dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/design_default_color_primary" />
+            tools:src="@drawable/img_placeholder"
+            android:scaleType="fitCenter"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -75,8 +75,8 @@
                 android:layout_marginEnd="5dp"
                 android:singleLine="true"
                 android:text="@{itemData.author}"
-                android:textColor="#666"
-                android:textSize="15sp"
+                android:textColor="@color/text_author"
+                android:textSize="@dimen/body_2"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/date"
@@ -91,8 +91,8 @@
                 android:layout_marginTop="16dp"
                 android:singleLine="true"
                 android:text="@{itemData.niceDate}"
-                android:textColor="#666"
-                android:textSize="15sp"
+                android:textColor="@color/text_time"
+                android:textSize="@dimen/overline"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="三天前三天前" />

@@ -87,7 +87,7 @@ class PressedConstraintLayout : ConstraintLayout {
             }
 
             mBgColor = getColor(
-                R.styleable.PressedConstraintLayout_pcl_bg_color, loadColor(R.color.transparent)
+                R.styleable.PressedConstraintLayout_pcl_bg_color, loadColor(R.color.black)
             )
             mPressBgColor = getColor(
                 R.styleable.PressedConstraintLayout_pcl_press_bg_color,

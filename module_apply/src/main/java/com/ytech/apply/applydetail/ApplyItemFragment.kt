@@ -18,14 +18,14 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.ytech.apply.R
-import com.ytech.apply.apply.MutablePageKeyedDataSource
-import com.ytech.apply.applydetail.adapter.PeojectPageAdapter
-import com.ytech.apply.databinding.AbsListLayoutBinding
+import com.ytech.apply.applydetail.adapter.ProjectPageAdapter
+import com.ytech.common.device.dp2px
 import com.ytech.model.apply.ProjectItemSub
 import com.ytech.ui.base.SupportFragment
+import com.ytech.ui.databinding.AbcListLayoutBinding
+import com.ytech.ui.view.RecyclerViewDivider
 
-class ApplyItemFragment : SupportFragment(), OnRefreshListener,
-    OnLoadMoreListener {
+class ApplyItemFragment : SupportFragment(), OnRefreshListener,OnLoadMoreListener {
 
     companion object {
         fun newInstance(id: Int): ApplyItemFragment {
@@ -37,27 +37,25 @@ class ApplyItemFragment : SupportFragment(), OnRefreshListener,
         }
     }
 
-    private lateinit var mBinding: AbsListLayoutBinding
-    lateinit var mViewModel: ApplyItemViewModel
+    lateinit var viewModel: ApplyItemViewModel
+    lateinit var viewBinding: AbcListLayoutBinding
 
-    lateinit var mAdapter: PagedListAdapter<com.ytech.model.apply.ProjectItemSub, RecyclerView.ViewHolder>
-    private lateinit var mRefreshLayout: SmartRefreshLayout
-    private lateinit var mRecycleView: RecyclerView
+    private lateinit var refreshLayout: SmartRefreshLayout
+    private lateinit var recycleView: RecyclerView
+    lateinit var adapter: PagedListAdapter<ProjectItemSub, RecyclerView.ViewHolder>
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        mBinding = DataBindingUtil.inflate(
+        viewBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.abs_list_layout,
+            R.layout.abc_list_layout,
             container,
             false
         )
-
-        return mBinding.root
+        return viewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,100 +64,87 @@ class ApplyItemFragment : SupportFragment(), OnRefreshListener,
         initData()
         val arguments = requireArguments()
         val id = arguments.getInt("id")
-        mViewModel.setId(id)
+        viewModel.setId(id)
     }
 
     private fun initView() {
-        hiddenActionBar()
-
-        initRecyclerView()
+        hideActionBar()
         initRefreshLayout()
-    }
-
-    private fun initRecyclerView() {
-        mRecycleView = mBinding.recycleView
-        mRecycleView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
-        val decoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
-        decoration.setDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.home_list_divier
-            )!!
-        )
-        mRecycleView.addItemDecoration(decoration)
+        initRecyclerView()
     }
 
     private fun initRefreshLayout() {
-        mRefreshLayout = mBinding.refreshLayout
-        mRefreshLayout.setEnableRefresh(true)
-        mRefreshLayout.setEnableLoadMore(true)
-        mRefreshLayout.setOnRefreshListener(this)
-        mRefreshLayout.setOnLoadMoreListener(this)
+        refreshLayout = viewBinding.refreshLayout
+        refreshLayout.setEnableRefresh(true)
+        refreshLayout.setEnableLoadMore(true)
+        refreshLayout.setOnRefreshListener(this)
+        refreshLayout.setOnLoadMoreListener(this)
+    }
+
+    private fun initRecyclerView() {
+        recycleView = viewBinding.recycleView
+        recycleView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        adapter = ProjectPageAdapter(context!!) as PagedListAdapter<ProjectItemSub, RecyclerView.ViewHolder>
+        recycleView.adapter = adapter
+
+        val divider = RecyclerViewDivider(requireContext(),
+            LinearLayoutManager.HORIZONTAL,
+            dp2px(requireContext(), 1.0F),
+            requireContext().resources.getColor(R.color.divider))
+        recycleView.addItemDecoration(divider)
+
     }
 
     private fun initData() {
-        mAdapter =
-            PeojectPageAdapter(context!!) as PagedListAdapter<com.ytech.model.apply.ProjectItemSub, RecyclerView.ViewHolder>
-        mRecycleView.adapter = mAdapter
-
-        mViewModel = ViewModelProvider(this).get(ApplyItemViewModel::class.java)
-        mViewModel.getPageData().observe(viewLifecycleOwner, Observer {
-            mAdapter.submitList(it)
+        viewModel = ViewModelProvider(this).get(ApplyItemViewModel::class.java)
+        viewModel.getPageData().observe(viewLifecycleOwner, Observer {
+            adapter.submitList(it)
         })
     }
 
-    private fun hiddenActionBar() {
-        mBinding.actionBar.visibility = View.GONE
-    }
-
+    /*******************  SmartRefreshLayout  Listener ***************************/
     override fun onRefresh(refreshLayout: RefreshLayout) {
-        mViewModel.getDataSource()!!.invalidate()
+        viewModel.getDataSource()!!.invalidate()
         finishRefresh()
     }
 
     override fun onLoadMore(refreshLayout: RefreshLayout) {
-
-        val currentList = mAdapter.currentList
+        /*
+        val currentList = adapter.currentList
         if (currentList == null || currentList.size <= 0) {
             return
         }
 
         val config = currentList!!.config
-
         val count = currentList.size / 15
-
-        mViewModel.getTabPageData(count,
-            object : PageKeyedDataSource.LoadCallback<Int, com.ytech.model.apply.ProjectItemSub>() {
-                override fun onResult(data: MutableList<com.ytech.model.apply.ProjectItemSub>, adjacentPageKey: Int?) {
-
-                    val dataSource =
-                        MutablePageKeyedDataSource<ProjectItemSub>()
-
+        viewModel.getTabPageData(count,
+            object : PageKeyedDataSource.LoadCallback<Int, ProjectItemSub>() {
+                override fun onResult(data: MutableList<ProjectItemSub>, adjacentPageKey: Int?) {
+                    val dataSource = MutablePageKeyedDataSource<ProjectItemSub>()
                     dataSource.data.addAll(currentList)
                     dataSource.data.addAll(data)
-
                     val pageList = dataSource.buildNewPageList(config)
-
-                    mAdapter.submitList(pageList)
-
+                    adapter.submitList(pageList)
                 }
 
-            })
+            })*/
 
         finishRefresh()
 
     }
 
     private fun finishRefresh() {
-        val state = mRefreshLayout.state
+        val state = refreshLayout.state
         if (state.isOpening && state.isHeader) {
-            mRefreshLayout.finishRefresh()
+            refreshLayout.finishRefresh()
         } else if (state.isOpening && state.isFooter) {
-            mRefreshLayout.finishLoadMore()
+            refreshLayout.finishLoadMore()
         }
     }
 
-
+    private fun hideActionBar() {
+        viewBinding.actionBar.visibility = View.GONE
+    }
 }

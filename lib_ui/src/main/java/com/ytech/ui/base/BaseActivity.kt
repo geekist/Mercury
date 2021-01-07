@@ -1,7 +1,7 @@
 package com.ytech.ui.base
 
 import android.os.Bundle
-import com.gyf.barlibrary.ImmersionBar
+import com.gyf.immersionbar.ImmersionBar
 
 class BaseActivity : SupportActivity() {
 
@@ -27,8 +27,8 @@ class BaseActivity : SupportActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        immersionBar?.destroy()
-        immersionBar = null
+//        immersionBar?.destroy()
+//        immersionBar = null
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

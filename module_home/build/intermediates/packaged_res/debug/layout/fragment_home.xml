@@ -16,6 +16,7 @@
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            app:indicator_selected_color="@color/secondaryLightColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

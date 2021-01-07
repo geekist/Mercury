@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.gyf.immersionbar.ktx.immersionBar
 import com.lxj.xpopup.XPopup
 import com.permissionx.guolindev.PermissionX
 import com.ytech.core.arouter.ARouterConstant
@@ -20,11 +21,24 @@ class MainActivity : SupportActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initImmersionBar()
+
         if (findFragment(MainFragment::class.java) == null) {
             loadRootFragment(R.id.fl_container, MainFragment())
         }
 
         showPermission()
+    }
+
+    private fun initImmersionBar() {
+        immersionBar {
+            fitsSystemWindows(true)  //使用该属性,必须指定状态栏颜色
+                .statusBarColor(R.color.primaryColor)
+            //transparentStatusBar()
+           // statusBarColor(R.color.white)
+           // navigationBarColor(R.color.colorPrimary)
+            statusBarDarkFont(true,0.2f)
+        }
     }
 
     override fun onCreateFragmentAnimator(): FragmentAnimator {
@@ -35,7 +49,7 @@ class MainActivity : SupportActivity() {
     private fun showPermission() {
         PermissionX.init(this)
             .permissions(
-                Manifest.permission.CAMERA,
+                //Manifest.permission.CAMERA,
                 //Manifest.permission.READ_CONTACTS,
                 //Manifest.permission.CALL_PHONE,
                 Manifest.permission.READ_EXTERNAL_STORAGE,

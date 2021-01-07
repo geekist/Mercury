@@ -66,6 +66,7 @@ dependencies {
     api rootProject.ext.dependencies["fragmentation-swipeback"]
 
     api rootProject.ext.dependencies["immersion-bar"]
+    api rootProject.ext.dependencies["immersion-bar-ktx"]
 
     compileOnly project(":lib_common")
     compileOnly project(":lib_model")
