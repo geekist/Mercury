@@ -13,15 +13,15 @@ import com.ytech.model.knowledge.TreeData
 import com.ytech.model.knowledge.TreeDataItem
 import com.ytech.ui.widget.flowlayout.TagAdapter
 
-class KnowledgeAdapter(context: Context, data: MutableList<com.ytech.model.knowledge.TreeData>) :
+class KnowledgeAdapter(context: Context, data: MutableList<TreeData>) :
     RecyclerView.Adapter<KnowledgeAdapter.ViewHolder>() {
 
     private val mContext = context
-    private var mData: MutableList<com.ytech.model.knowledge.TreeData> = data
+    private var mData: MutableList<TreeData> = data
 
-    private var mOnItemClickListener: ((treeData: com.ytech.model.knowledge.TreeDataItem, position: Int) -> Unit)? = null
-    fun mOnItemClickListener(l: (treeData: com.ytech.model.knowledge.TreeDataItem, position: Int) -> Unit) {
-        this.mOnItemClickListener = l
+    private var onItemClickListener: ((treeData: TreeDataItem, position: Int) -> Unit)? = null
+    fun onItemClickListener(l: (treeData: TreeDataItem, position: Int) -> Unit) {
+        this.onItemClickListener = l
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -50,12 +50,10 @@ class KnowledgeAdapter(context: Context, data: MutableList<com.ytech.model.knowl
         private val mBinding = binding
 
         fun setData(
-            treeDataItem: com.ytech.model.knowledge.TreeData,
+            treeDataItem: TreeData,
             mContext: Context
         ) {
-
             mBinding.treeData = treeDataItem
-
             val tagChildren = treeDataItem.children
 
             mBinding.mFlowLayout.setAdapter(object : TagAdapter() {
@@ -72,19 +70,14 @@ class KnowledgeAdapter(context: Context, data: MutableList<com.ytech.model.knowl
                 }
 
                 override fun bindView(view: View, position: Int) {
-
                     (view as TextView).text = tagChildren[position].name
-
                 }
 
                 override fun onItemViewClick(view: View, position: Int) {
                     val item = tagChildren[position]
-                    this@KnowledgeAdapter.mOnItemClickListener?.invoke(item,position)
-
-
+                    this@KnowledgeAdapter.onItemClickListener?.invoke(item, position)
                 }
             })
         }
-
     }
 }

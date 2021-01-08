@@ -2311,6 +2311,7 @@ id custom
 id customPanel
 id cut
 id dataBinding
+id date
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2502,6 +2503,7 @@ id permissionIcon
 id permissionText
 id permissionsLayout
 id photoViewContainer
+id pic
 id pin
 id placeholderView
 id position
@@ -2757,6 +2759,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_home
 layout fragment_web_client
+layout image_list_item
 layout include_viewpager
 layout layout_tab
 layout layout_tab_bottom

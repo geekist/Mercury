@@ -13,7 +13,7 @@ import com.ytech.model.apply.ProjectItemSub
 import kotlinx.coroutines.launch
 import java.util.*
 
-class ApplyItemViewModel() : ViewModel() {
+class ApplyItemViewModel: ViewModel() {
 
     private var mId: Int = 0
     fun setId(id: Int) {

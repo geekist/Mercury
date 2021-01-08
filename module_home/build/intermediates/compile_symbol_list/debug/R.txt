@@ -2310,6 +2310,7 @@ int id custom 0x0
 int id customPanel 0x0
 int id cut 0x0
 int id dataBinding 0x0
+int id date 0x0
 int id date_picker_actions 0x0
 int id decelerate 0x0
 int id decelerateAndComplete 0x0
@@ -2501,6 +2502,7 @@ int id permissionIcon 0x0
 int id permissionText 0x0
 int id permissionsLayout 0x0
 int id photoViewContainer 0x0
+int id pic 0x0
 int id pin 0x0
 int id placeholderView 0x0
 int id position 0x0
@@ -2756,6 +2758,7 @@ int layout design_text_input_end_icon 0x0
 int layout design_text_input_start_icon 0x0
 int layout fragment_home 0x0
 int layout fragment_web_client 0x0
+int layout image_list_item 0x0
 int layout include_viewpager 0x0
 int layout layout_tab 0x0
 int layout layout_tab_bottom 0x0

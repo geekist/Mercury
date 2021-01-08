@@ -8,7 +8,7 @@ import com.ytech.model.knowledge.TreeData
 
 object KnowledgeRepository : BaseRepository() {
 
-    suspend fun getTreeList(): NetResult<MutableList<com.ytech.model.knowledge.TreeData>> {
+    suspend fun getTreeList(): NetResult<MutableList<TreeData>> {
         return requestResponse(api = {RetrofitClient.create<KnowledgeApiService>().getTreeList()})
     }
 }

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -20,10 +19,10 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.ytech.core.arouter.ARouterConstant
-import com.ytech.model.DatasBean
 import com.ytech.knowledge.R
 import com.ytech.knowledge.databinding.FragmentKnowledgeDetailBinding
 import com.ytech.knowledge.knowledgedetail.adapter.TreeDetailListAdapter
+import com.ytech.model.DatasBean
 import com.ytech.ui.base.SupportFragment
 
 @Route(path = ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE_DETAIL)
@@ -41,7 +40,7 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
 
     private lateinit var mRefreshLayout: SmartRefreshLayout
     private lateinit var mRecycleView: RecyclerView
-    lateinit var mAdapter: PagedListAdapter<com.ytech.model.DatasBean, RecyclerView.ViewHolder>
+    lateinit var mAdapter: PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         ARouter.getInstance().inject(this)
@@ -77,7 +76,7 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
 
     private fun initData() {
         mAdapter =
-            TreeDetailListAdapter(context!!)  as PagedListAdapter<com.ytech.model.DatasBean, RecyclerView.ViewHolder>
+            TreeDetailListAdapter(context!!)  as PagedListAdapter<DatasBean, RecyclerView.ViewHolder>
         mRecycleView.adapter = mAdapter
 
         treeDetailViewModel = ViewModelProvider(this).get(TreeDetailViewModel::class.java)
@@ -105,7 +104,7 @@ class KnowledgeDetailFragment : SupportFragment(), OnLoadMoreListener, OnRefresh
         mRecycleView.addItemDecoration(decoration)
     }
 
-    fun initActionBar() {
+    private fun initActionBar() {
         knowledgeDetailBinding.mTvTitle.text = title
         knowledgeDetailBinding.mIvBack.setOnClickListener {
             pop()

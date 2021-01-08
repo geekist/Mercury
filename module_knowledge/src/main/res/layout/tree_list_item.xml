@@ -4,13 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <import type="com.ytech.model.knowledge.TreeData"></import>
-
         <variable
             name="treeData"
-            type="com.ytech.model.knowledge.TreeData" />
-
+            type="TreeData" />
     </data>
 
     <LinearLayout
@@ -32,18 +29,14 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="#dcdcdc" />
+            android:layout_height="1dp"
+            android:background="@color/divider" />
 
         <com.ytech.ui.widget.flowlayout.TagFlowLayout
             android:id="@+id/mFlowLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp" />
-
     </LinearLayout>
 </layout>

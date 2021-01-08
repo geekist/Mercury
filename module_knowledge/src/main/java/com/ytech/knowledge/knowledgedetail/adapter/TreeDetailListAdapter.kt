@@ -8,34 +8,33 @@ import androidx.databinding.DataBindingUtil
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.ytech.core.arouter.provider.WebViewWrapProvider
 import com.ytech.model.DatasBean
 import com.ytech.knowledge.R
 import com.ytech.knowledge.databinding.TreeDetailListItemBinding
 
 
-class TreeDetailListAdapter(context: Context) : PagedListAdapter<com.ytech.model.DatasBean, TreeDetailListAdapter.ViewHolder>(
+class TreeDetailListAdapter(context: Context) : PagedListAdapter<DatasBean, TreeDetailListAdapter.ViewHolder>(
 
-    object : DiffUtil.ItemCallback<com.ytech.model.DatasBean>() {
+    object : DiffUtil.ItemCallback<DatasBean>() {
             override fun areItemsTheSame(
-                oldItem: com.ytech.model.DatasBean,
-                newItem: com.ytech.model.DatasBean
+                oldItem: DatasBean,
+                newItem: DatasBean
             ): Boolean {
                 return oldItem == newItem
             }
 
             override fun areContentsTheSame(
-                oldItem: com.ytech.model.DatasBean,
-                newItem: com.ytech.model.DatasBean
+                oldItem: DatasBean,
+                newItem: DatasBean
             ): Boolean {
                 return oldItem.id == newItem.id
             }
         }
-
     ) {
 
     private val mContext = context
     private val inflater = LayoutInflater.from(mContext)
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = DataBindingUtil.inflate<TreeDetailListItemBinding>(
@@ -55,17 +54,16 @@ class TreeDetailListAdapter(context: Context) : PagedListAdapter<com.ytech.model
         itemView: View,
         binding: TreeDetailListItemBinding
     ) : RecyclerView.ViewHolder(itemView) {
-
         private val mBinding = binding
-
-        fun setData(item: com.ytech.model.DatasBean) {
-            mBinding.item = item
-
-            mBinding.itemParent.setOnClickListener {
-         //       WebViewWarpService.instance.start(mContext, item.title, item.link)
+        fun setData(item: DatasBean) {
+            if(item.desc.isNullOrEmpty()){
+                item.desc = mContext.resources.getString(R.string.empty_description)
             }
 
+            mBinding.item = item
+            mBinding.itemParent.setOnClickListener {
+                WebViewWrapProvider.instance.start(mContext, item.title, item.link)
+            }
         }
-
     }
 }

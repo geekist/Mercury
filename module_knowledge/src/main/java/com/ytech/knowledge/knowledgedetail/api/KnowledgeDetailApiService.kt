@@ -7,13 +7,9 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface KnowledgeDetailApiService {
-
     @GET(value = "/article/list/{count}/json")
     suspend fun getTreeDetailList(
         @Path("count") count: Int,
         @Query("cid") cid: Int
-    ): BaseModel<com.ytech.model.knowledge.TreeDetailModel>
-
-
-
+    ): BaseModel<TreeDetailModel>
 }

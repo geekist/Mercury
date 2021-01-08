@@ -16,6 +16,7 @@ import com.ytech.core.animator.CustomHorizontalAnimator
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.arouter.ARouterUtils
 import com.ytech.home.home.HomeFragment
+import com.ytech.knowledge.KnowledgeMainFragment
 import com.ytech.knowledge.knowledge.KnowledgeFragment
 import com.ytech.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -36,7 +37,7 @@ class MainFragment : BaseFragment() {
         arrayOf(
             ARouterUtils.obtainFragment(ARouterConstant.ModuleHome.FRAGMENT_HOME),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleApply.FRAGMENT_APPLY),
-            ARouterUtils.obtainFragment(ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE),
+            ARouterUtils.obtainFragment(ARouterConstant.ModuleKnowledge.FRAGMENT_KNOWLEDGE_MAIN),
             ARouterUtils.obtainFragment(ARouterConstant.ModuleAbout.FRAGMENT_ABOUT)
         )
     }
@@ -116,7 +117,7 @@ class MainFragment : BaseFragment() {
             else -> {
                 mFragments[MODULE_HOME_INDEX] = firstFragment
                 mFragments[MODULE_APPLY_INDEX] = findChildFragment(ApplyFragment::class.java)
-                mFragments[MODULE_KNOWLEDGE_INDEX] = findChildFragment(KnowledgeFragment::class.java)
+                mFragments[MODULE_KNOWLEDGE_INDEX] = findChildFragment(KnowledgeMainFragment::class.java)
                 mFragments[MODULE_ABOUT_INDEX] = findChildFragment(AboutFragment::class.java)
             }
         }

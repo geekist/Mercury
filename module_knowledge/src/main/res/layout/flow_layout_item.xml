@@ -7,11 +7,8 @@
     android:layout_marginRight="8dp"
     android:background="@drawable/default_bg_color"
     android:paddingLeft="14dp"
-    android:paddingTop="5dp"
     android:paddingRight="14dp"
     android:paddingBottom="5dp"
     android:textSize="16sp"
     tools:text="皮皮虾皮皮虾">
-
-
 </TextView>

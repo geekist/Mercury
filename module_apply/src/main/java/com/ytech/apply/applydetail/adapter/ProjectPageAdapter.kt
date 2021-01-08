@@ -1,27 +1,19 @@
 package com.ytech.apply.applydetail.adapter
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.Nullable
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.ytech.apply.R
-import com.ytech.apply.databinding.NavigationPageLayoutBinding
+import com.ytech.ui.databinding.ImageListItemBinding
 import com.ytech.core.GlobalConfig
 import com.ytech.core.arouter.provider.WebViewWrapProvider
 import com.ytech.model.apply.ProjectItemSub
-
 
 class ProjectPageAdapter constructor(val context: Context) :
     PagedListAdapter<ProjectItemSub, ProjectPageAdapter.ViewHolder>(
@@ -45,7 +37,7 @@ class ProjectPageAdapter constructor(val context: Context) :
     private val mInflater = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = NavigationPageLayoutBinding.inflate(mInflater, parent, false)
+        val binding = ImageListItemBinding.inflate(mInflater, parent, false)
         return ViewHolder(binding.root, binding)
     }
 
@@ -89,6 +81,6 @@ class ProjectPageAdapter constructor(val context: Context) :
 
     class ViewHolder(
         itemView: View,
-        val binding: NavigationPageLayoutBinding,
+        val binding: ImageListItemBinding,
     ) : RecyclerView.ViewHolder(itemView)
 }

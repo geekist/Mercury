@@ -13,10 +13,7 @@ abstract class TagAdapter {
 
     abstract fun bindView(view: View, position: Int)
 
-
-    open fun onItemViewClick(view: View, position: Int) {
-
-    }
+    open fun onItemViewClick(view: View, position: Int) {}
 
     open fun toastForMultiple(context: Context) {
 //        Toast.makeText(context, "已选择最大数量了", Toast.LENGTH_SHORT).show()
@@ -31,5 +28,4 @@ abstract class TagAdapter {
     fun notifyDataSetChanged() {
         mListener.onDataChanged()
     }
-
 }
