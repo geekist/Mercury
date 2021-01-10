@@ -41,9 +41,18 @@ class AboutFragment : SupportFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        mDataBinding.profileBackground.background.mutate().alpha = 166
+
         mDataBinding.aboutMe.setOnClickListener {
             ARouterUtils.navigation(ARouterConstant.ModuleAbout.ACTIVITY_ABOUT)
         }
-        mDataBinding.profileBackground.background.mutate().alpha = 166
+
+        mDataBinding.aboutVersion.setOnClickListener {
+            ARouterUtils.navigation(ARouterConstant.ModuleAbout.ACTIVITY_BRAND)
+        }
+
+        mDataBinding.aboutThanks.setOnClickListener {
+            ARouterUtils.navigation(ARouterConstant.ModuleAbout.ACTIVITY_GITHUB)
+        }
     }
 }

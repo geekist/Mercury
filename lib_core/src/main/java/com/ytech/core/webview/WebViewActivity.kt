@@ -74,6 +74,10 @@ class WebViewActivity : SupportActivity() {
 
         mWebView.webChromeClient = object : WebChromeClient() {
 
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                super.onProgressChanged(view, newProgress)
+                progress.setWebProgress(newProgress)
+            }
         }
 
         mWebView.webViewClient = object : WebViewClient() {
@@ -89,11 +93,18 @@ class WebViewActivity : SupportActivity() {
                 view: WebView?,
                 request: WebResourceRequest?
             ): Boolean {
-                Log.d("","")
+                Log.d("", "")
                 return super.shouldOverrideUrlLoading(view, request)
+            }
+
+            override fun onPageFinished(view: WebView?, url: String?) {
+                progress.hide();
+                super.onPageFinished(view, url)
             }
         }
 
         mWebView.loadUrl(url)
+        progress.show();
+        progress.setColor(resources.getColor(R.color.secondaryColor));
     }
 }

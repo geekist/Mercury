@@ -55,10 +55,22 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#dcdcdc" />
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dcdcdc" />
+
+        <com.ytech.core.webview.WebProgress
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#dcdcdc"
+            android:visibility="gone" />
+    </FrameLayout>
 
     <WebView
         android:id="@+id/mWebView"

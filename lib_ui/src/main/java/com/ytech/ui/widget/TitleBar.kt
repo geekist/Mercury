@@ -146,8 +146,8 @@ open class TitleBar : AppBarLayout {
     fun setNavigationIcon(@DrawableRes navIcon: Int = -1) {
         if (navIcon != -1) {
             getToolBar().setNavigationIcon(navIcon)
-            if (mEnableTint)
-                getToolBar().navigationIcon?.setColorFilter(mNavIconTint, PorterDuff.Mode.SRC_IN)
+           // if (mEnableTint)
+            //    getToolBar().navigationIcon?.setColorFilter(mNavIconTint, PorterDuff.Mode.SRC_IN)
         }
     }
 

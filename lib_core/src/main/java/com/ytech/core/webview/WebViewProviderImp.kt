@@ -12,6 +12,7 @@ class WebViewProviderImp : IWebViewProvider {
 
     override fun start(context: Context, title: String, url: String) {
         WebViewActivity.start(context, title, url)
+       // AgentWebActivity.start(context, title, url)
     }
 
     override fun init(context: Context?) {

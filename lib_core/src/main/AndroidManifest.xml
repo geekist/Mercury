@@ -3,7 +3,8 @@
     package="com.ytech.core">
 
     <application>
-        <activity android:name=".webview.WebViewActivity"></activity>
+        <activity android:name=".webview.AgentWebActivity"></activity>
+        <activity android:name=".webview.WebViewActivity" />
     </application>
 
 </manifest>

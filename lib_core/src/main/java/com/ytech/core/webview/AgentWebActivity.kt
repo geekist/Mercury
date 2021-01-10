@@ -1,14 +1,18 @@
 package com.ytech.core.webview
 
+import android.content.Context
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.webkit.ConsoleMessage
 import android.webkit.WebView
 import android.widget.LinearLayout
+import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.bigkoo.convenientbanner.utils.ScreenUtil
+import com.gyf.immersionbar.ktx.immersionBar
 import com.just.agentweb.AgentWeb
 import com.just.agentweb.WebChromeClient
 import com.just.agentweb.WebViewClient
@@ -21,80 +25,70 @@ import com.ytech.common.view.hide
 import com.ytech.core.R
 import com.ytech.core.arouter.ARouterConstant
 import com.ytech.core.constant.AppConstant
-import com.ytech.ui.base.SupportFragment
+import com.ytech.ui.base.SupportActivity
+import kotlinx.android.synthetic.main.activity_web_client.*
 import kotlinx.android.synthetic.main.fragment_web_client.*
 
-@Route(path = ARouterConstant.LibCore.FRAGMENT_WEB_CLIENT)
-open class WebClientFragment : SupportFragment() {
+@Route(path = ARouterConstant.LibCore.ACTIVITY_AGENT_WEB)
+class AgentWebActivity : SupportActivity() {
+
+    @Autowired
+    lateinit var title: String
+
+    @Autowired
+    lateinit var url: String
 
     companion object {
-        // android注入到js的对象名称
+        fun start(context: Context, title: String, url: String) {
+            val intent = Intent(context, AgentWebActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.putExtra("title", title)
+            intent.putExtra("url", url)
+            context.startActivity(intent)
+        }
+
         const val ANDROID_JS_OBJECT = "Android"
     }
 
-    private var mUrl = ""
-
-    /**
-     * 是否显示TitleBar
-     */
-    private val mShowLocalTitleBar by lazy {
-        arguments?.getBoolean(AppConstant.EXTRA_WEB_SHOW_LOCAL_TITLE_BAR, true) ?: true
-    }
-
-    /**
-     * 是否显示返回按钮
-     */
-    private val mShowBackIcon by lazy {
-        arguments?.getBoolean(AppConstant.EXTRA_WEB_SHOW_BACK_ICON, true) ?: true
-    }
-
-    /**
-     * Web页面是否支持EventBus
-     */
-    private val mSupportEventBus by lazy {
-        arguments?.getBoolean(AppConstant.EXTRA_WEB_SUPPORT_EVENT_BUS, false) ?: false
-    }
-
-    /**
-     * WebView Fragment是否支持侧滑返回
-     */
-    private val mSupportSwipeBack by lazy {
-        arguments?.getBoolean(AppConstant.EXTRA_SUPPORT_SWIPE_BACK, true) ?: true
-    }
 
     protected open var mAgentWeb: AgentWeb? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mUrl = arguments?.getString(AppConstant.EXTRA_WEB_URL, "") ?: ""
+
+        ARouter.getInstance().inject(this)
+
+        setContentView(R.layout.activity_agent_web)
+
+        initView()
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(
-             R.layout.fragment_web_client,
-             container,
-             false
-         )
-    }
+    fun initView() {
+        mTitleBar.setNavigationIcon(R.drawable.ic_title_back_black)
+        mTitleBar.setTitle(title)
+        mTitleBar.getToolBar().setNavigationOnClickListener {
+            finish()
+        }
 
-    fun initView(savedInstanceState: Bundle?, rootView: View) {
-        if (!mShowLocalTitleBar) mTitleBar.hide()
-        if (mShowBackIcon) mTitleBar.setNavigationIcon(R.drawable.ic_title_back_black)
-    }
-
-    override fun onEnterAnimationEnd(savedInstanceState: Bundle?) {
-        super.onEnterAnimationEnd(savedInstanceState)
+        initImmersionBar()
         initAgentWeb()
     }
 
+    private fun initImmersionBar() {
+        immersionBar {
+            //   fitsSystemWindows(true)  //使用该属性,必须指定状态栏颜色
+            //.statusBarColor(R.color.primaryColor)
+            // transparentStatusBar()
+            statusBarColor(R.color.white)
+            // navigationBarColor(R.color.colorPrimary)
+            statusBarDarkFont(true,0.2f)
+        }
+    }
 
-    protected open fun initAgentWeb() {
+     private fun initAgentWeb() {
         L.e("initAgentWeb")
-        mAgentWeb = AgentWeb.with(this@WebClientFragment)
+        mAgentWeb = AgentWeb.with(this@AgentWebActivity)
             // 传入AgentWeb的父控件
             .setAgentWebParent(
                 mContentLayout,
@@ -104,7 +98,7 @@ open class WebClientFragment : SupportFragment() {
                 )
             )
             // 设置进度条颜色与高度 单位为dp。
-            .useDefaultIndicator(context!!.loadColor(R.color.cmn_ui_primary_color), 3)
+            .useDefaultIndicator(this.loadColor(R.color.secondaryColor), 1)
             // 与 WebView 使用一致 ，但是请勿获取WebView调用setWebViewClient(xx)方法了,会覆盖AgentWeb DefaultWebClient,同时相应的中间件也会失效。
             .setWebViewClient(mWebViewClient)
             .setWebChromeClient(mWebChromeClient)
@@ -114,21 +108,21 @@ open class WebClientFragment : SupportFragment() {
             .setMainFrameErrorView(R.layout.web_layout_error, R.id.mBtnReload)
             .createAgentWeb()
             .ready()
-            .go(mUrl)
+            .go(url)
         mAgentWeb?.agentWebSettings?.webSettings?.let { webSettings ->
             // 这里需要设置为true，才能让Webivew支持<meta>标签的viewport属性
             webSettings.useWideViewPort = true
             webSettings.userAgentString =
-                webSettings.userAgentString + " xmandroidapp##v${context!!.getAppVersionName()}"
+                webSettings.userAgentString + " xmandroidapp##v${this.getAppVersionName()}"
         }
         mAgentWeb?.let {
             // 注入Android对象
-            it.jsInterfaceHolder.addJavaObject(
-                ANDROID_JS_OBJECT,
-                AndroidInterface(this@WebClientFragment, it)
-            )
+//            it.jsInterfaceHolder.addJavaObject(
+//                WebClientFragment.ANDROID_JS_OBJECT,
+//                AndroidInterface(this@WebClientFragment, it)
+//            )
         }
-        L.e("加载的url : $mUrl")
+        L.e("加载的url : $url")
     }
 
     private val mWebViewClient by lazy {
@@ -137,9 +131,11 @@ open class WebClientFragment : SupportFragment() {
                 super.onPageFinished(view, url)
                 view?.let {
                     it.evaluateJavascript(
-                        "javascript:getAndroidStatusBarHeight(${context!!.getStatusBarHeight()},${ScreenUtil.getScreenWidth(
-                            context!!
-                        )})"
+                        "javascript:getAndroidStatusBarHeight(${this@AgentWebActivity.getStatusBarHeight()},${
+                            ScreenUtil.getScreenWidth(
+                                this@AgentWebActivity
+                            )
+                        })"
                     ) { }
                 }
             }
@@ -151,7 +147,7 @@ open class WebClientFragment : SupportFragment() {
             override fun onReceivedTitle(view: WebView, title: String) {
                 if (title.isNotEmptyStr()) {
                     val newTitle = if (title.length > 15) "${title.substring(0, 15)}..." else title
-                  //  mTitleBar?.setTitle(newTitle)
+                    //  mTitleBar?.setTitle(newTitle)
                 }
             }
 
@@ -194,17 +190,21 @@ open class WebClientFragment : SupportFragment() {
         mAgentWeb?.webLifeCycle?.onDestroy()
         super.onDestroy()
     }
-/*
-    override fun getTitleBar(): TitleBar? = mTitleBar
 
-    override fun supportEventBus() = mSupportEventBus
+    /*
+        override fun getTitleBar(): TitleBar? = mTitleBar
 
-    override fun supportSwipeBack() = mSupportSwipeBack
-*/
-    override fun onBackPressedSupport(): Boolean {
-        if (mAgentWeb?.back() == true) {
-            return true
-        }
-        return super.onBackPressedSupport()
-    }
+        override fun supportEventBus() = mSupportEventBus
+
+        override fun supportSwipeBack() = mSupportSwipeBack
+    */
+
+//    override fun onBackPressedSupport() {
+//        if (mAgentWeb?.back() == true) {
+//            return
+//        }
+//        return super.onBackPressedSupport()
+//    }
+
+
 }

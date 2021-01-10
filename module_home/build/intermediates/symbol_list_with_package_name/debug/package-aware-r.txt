@@ -2103,6 +2103,7 @@ drawable fragmentation_help
 drawable fragmentation_ic_expandable
 drawable fragmentation_ic_right
 drawable fragmentation_ic_stack
+drawable github
 drawable home_list_divier
 drawable ic_about_white_24dp
 drawable ic_apply_white_24dp
@@ -2117,6 +2118,7 @@ drawable ic_empty_0
 drawable ic_home_white_24dp
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
+drawable ic_launcher
 drawable ic_menu_arrow_down_black_24dp
 drawable ic_menu_arrow_up_black_24dp
 drawable ic_message_checked
@@ -2205,6 +2207,7 @@ id TOP_END
 id TOP_START
 id TRIANGLE
 id Translate
+id about_thanks
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2357,6 +2360,7 @@ id fragment_container_view_tag
 id fullPopupContainer
 id ghost_view
 id ghost_view_holder
+id gitName
 id glide_custom_view_target_tag
 id gone
 id group_divider
@@ -2510,6 +2514,7 @@ id position
 id positiveBtn
 id positiveLayout
 id postLayout
+id progress
 id progress_circular
 id progress_horizontal
 id radial
@@ -2730,6 +2735,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_agent_web
 layout activity_web_client
 layout agentweb_error_page
 layout brvah_quick_view_load_more
@@ -2759,6 +2765,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_home
 layout fragment_web_client
+layout git_list_item
 layout image_list_item
 layout include_viewpager
 layout layout_tab

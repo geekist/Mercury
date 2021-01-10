@@ -2102,6 +2102,7 @@ int drawable fragmentation_help 0x0
 int drawable fragmentation_ic_expandable 0x0
 int drawable fragmentation_ic_right 0x0
 int drawable fragmentation_ic_stack 0x0
+int drawable github 0x0
 int drawable home_list_divier 0x0
 int drawable ic_about_white_24dp 0x0
 int drawable ic_apply_white_24dp 0x0
@@ -2116,6 +2117,7 @@ int drawable ic_empty_0 0x0
 int drawable ic_home_white_24dp 0x0
 int drawable ic_keyboard_arrow_left_black_24dp 0x0
 int drawable ic_keyboard_arrow_right_black_24dp 0x0
+int drawable ic_launcher 0x0
 int drawable ic_menu_arrow_down_black_24dp 0x0
 int drawable ic_menu_arrow_up_black_24dp 0x0
 int drawable ic_message_checked 0x0
@@ -2204,6 +2206,7 @@ int id TOP_END 0x0
 int id TOP_START 0x0
 int id TRIANGLE 0x0
 int id Translate 0x0
+int id about_thanks 0x0
 int id accelerate 0x0
 int id accessibility_action_clickable_span 0x0
 int id accessibility_custom_action_0 0x0
@@ -2356,6 +2359,7 @@ int id fragment_container_view_tag 0x0
 int id fullPopupContainer 0x0
 int id ghost_view 0x0
 int id ghost_view_holder 0x0
+int id gitName 0x0
 int id glide_custom_view_target_tag 0x0
 int id gone 0x0
 int id group_divider 0x0
@@ -2509,6 +2513,7 @@ int id position 0x0
 int id positiveBtn 0x0
 int id positiveLayout 0x0
 int id postLayout 0x0
+int id progress 0x0
 int id progress_circular 0x0
 int id progress_horizontal 0x0
 int id radial 0x0
@@ -2729,6 +2734,7 @@ int layout abc_search_dropdown_item_icons_2line 0x0
 int layout abc_search_view 0x0
 int layout abc_select_dialog_material 0x0
 int layout abc_tooltip 0x0
+int layout activity_agent_web 0x0
 int layout activity_web_client 0x0
 int layout agentweb_error_page 0x0
 int layout brvah_quick_view_load_more 0x0
@@ -2758,6 +2764,7 @@ int layout design_text_input_end_icon 0x0
 int layout design_text_input_start_icon 0x0
 int layout fragment_home 0x0
 int layout fragment_web_client 0x0
+int layout git_list_item 0x0
 int layout image_list_item 0x0
 int layout include_viewpager 0x0
 int layout layout_tab 0x0

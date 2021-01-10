@@ -3,7 +3,9 @@
     package="com.ytech.about">
 
     <application>
-        <activity android:name=".AboutMeActivity"></activity>
+        <activity android:name=".GithubActivity"></activity>
+        <activity android:name=".BrandActivity" />
+        <activity android:name=".AboutMeActivity" />
     </application>
 
 </manifest>
