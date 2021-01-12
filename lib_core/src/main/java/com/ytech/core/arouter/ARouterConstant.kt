@@ -7,18 +7,42 @@ object ARouterConstant {
 
     object ModuleAbout {
         const val FRAGMENT_ABOUT = "/about/AboutFragment"
+        const val ACTIVITY_ABOUT = "/about/AboutMeActivity"
+        const val ACTIVITY_BRAND = "/about/BrandActivity"
+        const val ACTIVITY_GITHUB = "/about/GithubActivity"
     }
 
     object ModuleHome {
         const val FRAGMENT_HOME = "/home/HomeFragment"
     }
 
+    object ModuleAccount {
+        const val FRAGMENT_LOGIN = "/account/LoginFragment"
+        const val FRAGMENT_REGISTER = "/account/RegisterFragment"
+        const val FRAGMENT_RENEW_PASSWORD = "/account/RenewPasswordFragment"
+    }
+
     object ModuleKnowledge {
+        const val FRAGMENT_KNOWLEDGE_MAIN = "/knowledge/KnowledgeMainFragment"
         const val FRAGMENT_KNOWLEDGE = "/knowledge/KnowledgeFragment"
+        const val FRAGMENT_KNOWLEDGE_DETAIL = "/knowledge/KnowledgeDetailFragment"
     }
 
     object ModuleApply {
         const val FRAGMENT_APPLY = "/apply/ApplyFragment"
+    }
+
+    object LibCore {
+        const val FRAGMENT_WEB_CLIENT = "/lib/core/WebClientFragment"
+        const val ACTIVITY_WEB_CLIENT = "/lib/core/WebClientActivity"
+        const val ACTIVITY_AGENT_WEB = "/lib/core/AgentWebActivity"
+
+    }
+
+    object WebView {
+        const val WEB_CLIENT_ACTIVITY_PROVIDER = "/lib/core/WebClientProvider"
+        const val WEB_VIEW_PROVIDER_PATH = "/webView/webView_provider"
+
     }
 
     /**

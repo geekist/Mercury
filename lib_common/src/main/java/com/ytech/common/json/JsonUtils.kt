@@ -22,6 +22,10 @@ object JsonUtils {
         return null
     }
 
+    fun <T,V> mapToJson(map: Map<T,V>) : String {
+        return GSON.toJson(map)
+    }
+
     fun <T : Any> fromJson(json: String, clazz: Class<T>): T? {
         try {
             return GSON.fromJson(json, clazz)

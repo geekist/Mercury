@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.ytech.model.apply.ProjectItemSub" />
+
+        <variable
+            name="itemData"
+            type="ProjectItemSub" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_placeholder"
+            android:scaleType="fitCenter"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pic"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{itemData.title}"
+                android:textColor="#333"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="我是标题" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="4"
+                android:text="@{itemData.desc}"
+                android:textColor="#666"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="我是标题我是标题我是标题我是标题我是标题我是标题" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="5dp"
+                android:singleLine="true"
+                android:text="@{itemData.author}"
+                android:textColor="@color/text_author"
+                android:textSize="@dimen/body_2"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/date"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="作者作者作者作者作者作者" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:singleLine="true"
+                android:text="@{itemData.niceDate}"
+                android:textColor="@color/text_time"
+                android:textSize="@dimen/overline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="三天前三天前" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

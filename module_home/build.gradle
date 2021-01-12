@@ -35,8 +35,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -55,5 +60,22 @@ dependencies {
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt 'com.alibaba:arouter-compiler:1.5.1'
 
+    //只是编译进去的话，viewmodelProvider通不过
+    implementation rootProject.ext.dependencies.lifecycleExt
+    implementation rootProject.ext.dependencies.lifecycleViewmodelKtx
+    implementation rootProject.ext.dependencies.paging
+
+
+
+
+
+
+    compileOnly rootProject.ext.dependencies["banner"]
+    compileOnly rootProject.ext.dependencies["glide"]
+
+
     compileOnly project(":lib_core")
+    compileOnly project(":lib_ui")
+    compileOnly project(":lib_common")
+    compileOnly project(":lib_model")
 }

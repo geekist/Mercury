@@ -33,6 +33,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -44,6 +49,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+
+    //只是编译进去的话，viewmodelProvider通不过
+    implementation rootProject.ext.dependencies.lifecycleExt
+    implementation rootProject.ext.dependencies.lifecycleViewmodelKtx
+
     api rootProject.ext.dependencies["constraintlayout"]
 
     api rootProject.ext.dependencies["xpopup"]
@@ -52,7 +62,13 @@ dependencies {
 
     api rootProject.ext.dependencies["flyco-tab-layout"]
 
+    api rootProject.ext.dependencies["fragmentation-core"]
+    api rootProject.ext.dependencies["fragmentation-swipeback"]
 
+    api rootProject.ext.dependencies["immersion-bar"]
+    api rootProject.ext.dependencies["immersion-bar-ktx"]
 
-    api project(":lib_common")
+    compileOnly project(":lib_common")
+    compileOnly project(":lib_model")
+
 }

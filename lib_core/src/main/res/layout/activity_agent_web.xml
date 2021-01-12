@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.ytech.ui.widget.TitleBar
+            android:id="@+id/mTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            app:tb_menu_color="@color/colorGray333"
+            appLtb_enable_tint="false"
+            tools:layout_height="50dp"
+            tools:tb_nav_icon="@drawable/ic_title_back_black" />
+    </LinearLayout>
+</layout>

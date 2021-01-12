@@ -1,0 +1,28 @@
+com/ytech/core/BR.java
+ com.ytech.core.BR
+com/ytech/ui/BR.java
+ com.ytech.ui.BR
+com/alibaba/android/arouter/routes/ARouter$$Root$$module_home.java
+ com.alibaba.android.arouter.routes.ARouter$$Root$$module_home
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/ytech/home/DataBindingTriggerClass.java
+ com.ytech.home.DataBindingTriggerClass
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/ytech/home/BuildConfig.java
+ com.ytech.home.BuildConfig
+com/alibaba/android/arouter/routes/ARouter$$Providers$$module_home.java
+ com.alibaba.android.arouter.routes.ARouter$$Providers$$module_home
+com/ytech/home/BR.java
+ com.ytech.home.BR
+com/ytech/home/databinding/FragmentHomeBinding.java
+ com.ytech.home.databinding.FragmentHomeBinding
+com/alibaba/android/arouter/routes/ARouter$$Group$$home.java
+ com.alibaba.android.arouter.routes.ARouter$$Group$$home
+com/ytech/home/DataBinderMapperImpl.java
+ com.ytech.home.DataBinderMapperImpl
+ com.ytech.home.DataBinderMapperImpl$InnerBrLookup
+ com.ytech.home.DataBinderMapperImpl$InnerLayoutIdLookup
+com/ytech/home/databinding/FragmentHomeBindingImpl.java
+ com.ytech.home.databinding.FragmentHomeBindingImpl

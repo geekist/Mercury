@@ -9,26 +9,42 @@ ext {
     ]
 
     version = [
-            appcompatVersion        : "1.2.0",
-            multidexVersion         : "1.0.3",
+            appcompatVersion            : "1.2.0",
+            multidexVersion             : "1.0.3",
 
-            materialVersion         : "1.2.1",
-            androidSupportSdkVersion: "28.0.0",
-            rxLifecycle2SdkVersion  : "2.0.1",
-            rxLifecycle3SdkVersion  : "3.0.0",
-            espressoSdkVersion      : "2.2.2",
-            coreKtxVersion          : "1.3.2",
+            materialVersion             : "1.2.1",
+            androidSupportSdkVersion    : "28.0.0",
+            rxLifecycle2SdkVersion      : "2.0.1",
+            rxLifecycle3SdkVersion      : "3.0.0",
+            espressoSdkVersion          : "2.2.2",
+            coreKtxVersion              : "1.3.2",
 
-            constraintlayoutVersion : "2.0.4",
+            constraintlayoutVersion     : "2.0.4",
+
+            coroutineVersion            : "1.1.1",
+            coroutineAndroidVersion     : "1.1.1",
 
             //retrofit
-            retrofit2Version        : "retrofit2Version",
-            retrofit2rxJava2Version : "2.9.0",
+            retrofit2Version            : "retrofit2Version",
+            retrofit2rxJava2Version     : "2.9.0",
 
-            permissionxVersion      : "1.4.0",
+            permissionxVersion          : "1.4.0",
 
-            xpopupVersion           : "2.2.5",
-            backgroundLibraryVersion: "1.6.5",
+            xpopupVersion               : "2.2.5",
+            backgroundLibraryVersion    : "1.6.5",
+
+            koinVersion                 : '2.1.5',
+
+            mmkvVersion                 : '1.1.1',
+
+            lifecycleViewmodelKtxVersion: '2.2.0',
+
+            bannerVersion               : '2.0.8', //banner
+
+            glideVersion                : '4.11.0',
+
+            pagingVersion               : '2.1.1',
+
     ]
 
     dependencies = [
@@ -47,16 +63,34 @@ ext {
             //kotlin
             "core-ktx"                             : "androidx.core:core-ktx:${version.coreKtxVersion}",
 
+            //coroutine
+            "coroutine"                            : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${version.coroutineVersion}",
+            "coroutine-android"                    : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${version.coroutineAndroidVersion}",
+
             //PermissionX
             "permissionx"                          : "com.permissionx.guolindev:permissionx:${version.permissionxVersion}",
 
             //
             "xpopup"                               : "com.lxj:xpopup:${version.xpopupVersion}",
 
-            "backgroundLibrary"                     : "com.noober.background:core:${version.backgroundLibraryVersion}",
+            "backgroundLibrary"                    : "com.noober.background:core:${version.backgroundLibraryVersion}",
 
             //自定义tablelayout库
             "flyco-tab-layout"                     : 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar',
+
+            lifecycleExt                           : 'androidx.lifecycle:lifecycle-extensions:2.2.0',
+            //viewmodel中使用viewmodelScope
+            lifecycleViewmodelKtx                  : "androidx.lifecycle:lifecycle-viewmodel-ktx:${version.lifecycleViewmodelKtxVersion}",
+
+
+            // Koin AndroidX Scope feature
+            koinScop                               : "org.koin:koin-androidx-scope:${version.koinVersion}",
+
+            // Koin AndroidX ViewModel feature
+            KoinViewModel                          : "org.koin:koin-androidx-viewmodel:${version.koinVersion}",
+
+            // Koin AndroidX Fragment Factory (unstable version)
+            koinFragmet                            : "org.koin:koin-androidx-fragment:${version.koinVersion}",
 
 
             // test
@@ -93,6 +127,7 @@ ext {
             "rxjava2"                              : "io.reactivex.rxjava2:rxjava:2.2.7",
             "rxlifecycle3-android-lifecycle-kotlin": "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:${version["rxLifecycle3SdkVersion"]}",
 
+
             // RecyclerView适配器
             "recyclerview-adapter"                 : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46',
             "super-textview"                       : 'com.github.chenBingX:SuperTextView:3.1.5',
@@ -102,8 +137,8 @@ ext {
             "and-permissions"                      : 'com.yanzhenjie:permission:2.0.3',
 
             // 沉浸式状态栏
-            "immersion-bar"                        : "com.gyf.immersionbar:immersionbar:2.3.3",
-
+            "immersion-bar"                        : "com.gyf.immersionbar:immersionbar:3.0.0",
+            "immersion-bar-ktx"                    : "com.gyf.immersionbar:immersionbar-ktx:3.0.0",
             // ImageLoader
             "sketch"                               : "me.panpf:sketch:2.7.0",
             "sketch-gif"                           : "me.panpf:sketch-gif:2.7.0",
@@ -168,5 +203,16 @@ ext {
             "ShadowLayout"                         : 'com.github.lihangleo2:ShadowLayout:2.1.5',
             "vercodeedittext"                      : 'com.justkiddingbaby:vercodeedittext:1.1.0',
             "flexbox"                              : 'com.google.android:flexbox:2.0.1',
+
+            //数据存储
+            mmkv                                   : "com.tencent:mmkv-static:${version.mmkvVersion}",
+
+            banner                                 : "com.youth.banner:banner:${version.bannerVersion}",
+
+            glide                                  : "com.github.bumptech.glide:glide:${version.glideVersion}",
+
+            paging                                 : "androidx.paging:paging-runtime:${version.pagingVersion}",
+
+
     ]
 }

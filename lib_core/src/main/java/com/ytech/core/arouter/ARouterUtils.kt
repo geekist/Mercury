@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.alibaba.android.arouter.facade.template.IProvider
 import com.alibaba.android.arouter.launcher.ARouter
 import com.ytech.common.common.buildBundle
 import com.ytech.core.BuildConfig
@@ -54,10 +55,30 @@ object ARouterUtils {
         }
     }
 
-    fun obtainService(path: String): Any? {
+    fun startActivityWithBundle(path: String, vararg params:Pair<String, Any?>) {
+         ARouter.getInstance()
+            .build(path)
+            .with(buildBundle(*params))
+            .navigation()
+    }
+
+    fun obtainService(path: String): IProvider {
         return ARouter.getInstance()
             .build(path)
-            .navigation()
+            .navigation() as IProvider
+    }
+
+    fun obtainServiceWithBundle(
+        path: String, vararg params: Pair<String, Any?>
+    ): IProvider {
+        return obtainServiceWithBundle(path, buildBundle(*params))
+    }
+
+    private fun obtainServiceWithBundle(path: String, args: Bundle): IProvider {
+        return ARouter.getInstance()
+            .build(path)
+            .with(args)
+            .navigation() as IProvider
     }
 
     fun obtainFragment(path: String): ISupportFragment {
@@ -72,7 +93,7 @@ object ARouterUtils {
         return obtainFragmentWithBundle(path, buildBundle(*params))
     }
 
-    fun obtainFragmentWithBundle(path: String, args: Bundle): ISupportFragment {
+    private fun obtainFragmentWithBundle(path: String, args: Bundle): ISupportFragment {
         return ARouter.getInstance()
             .build(path)
             .with(args)

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_height="44dp"
+    tools:parentTag="com.google.android.material.appbar.AppBarLayout">
+
+    <!--<View
+        android:id="@+id/mStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ViewStub
+            android:id="@+id/mCenterLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--<View
+        android:id="@+id/mSplit"
+        style="@style/HorizontalDivider" />-->
+
+    <ViewStub
+        android:id="@+id/mComposeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</merge>

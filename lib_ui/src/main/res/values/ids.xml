@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="root_container_id" type="id"/>
+    <item name="mStatusLayout" type="id" />
+    <item name="mRvList" type="id" />
+    <item name="mRefreshLayout" type="id" />
+
+    <item name="mHeaderTitle" type="id" />
+
+    <item name="mContentLayout" type="id" />
+    <item name="mCropView" type="id" />
+</resources>

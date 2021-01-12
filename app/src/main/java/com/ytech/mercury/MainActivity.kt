@@ -3,11 +3,13 @@ package com.ytech.mercury
 import android.Manifest
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.gyf.immersionbar.ktx.immersionBar
 import com.lxj.xpopup.XPopup
 import com.permissionx.guolindev.PermissionX
 import com.ytech.core.arouter.ARouterConstant
-import com.ytech.core.support.SupportActivity
+import com.ytech.ui.base.SupportActivity
 import com.ytech.ui.dialog.ServiceAgreementDialog
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator
 import me.yokeyword.fragmentation.anim.FragmentAnimator
@@ -19,11 +21,24 @@ class MainActivity : SupportActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initImmersionBar()
+
         if (findFragment(MainFragment::class.java) == null) {
             loadRootFragment(R.id.fl_container, MainFragment())
         }
 
         showPermission()
+    }
+
+    private fun initImmersionBar() {
+        immersionBar {
+            fitsSystemWindows(true)  //使用该属性,必须指定状态栏颜色
+                .statusBarColor(R.color.primaryColor)
+            //transparentStatusBar()
+           // statusBarColor(R.color.white)
+           // navigationBarColor(R.color.colorPrimary)
+            statusBarDarkFont(true,0.2f)
+        }
     }
 
     override fun onCreateFragmentAnimator(): FragmentAnimator {
@@ -34,15 +49,18 @@ class MainActivity : SupportActivity() {
     private fun showPermission() {
         PermissionX.init(this)
             .permissions(
-                Manifest.permission.CAMERA,
-                Manifest.permission.READ_CONTACTS,
-                Manifest.permission.CALL_PHONE,
+                //Manifest.permission.CAMERA,
+                //Manifest.permission.READ_CONTACTS,
+                //Manifest.permission.CALL_PHONE,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.READ_PHONE_STATE
+               // Manifest.permission.READ_PHONE_STATE
             )
+            .setDialogTintColor(
+                ContextCompat.getColor(this,R.color.secondaryColor),
+                ContextCompat.getColor(this,R.color.secondaryLightColor))
             // .explainReasonBeforeRequest()
             .onExplainRequestReason { scope, deniedList ->
                 scope.showRequestReasonDialog(deniedList, "即将申请的权限是程序必须依赖的权限", "我已明白")
@@ -52,9 +70,9 @@ class MainActivity : SupportActivity() {
             }
             .request { allGranted, grantedList, deniedList ->
                 if (allGranted) {
-                    Toast.makeText(this, "所有申请的权限都已通过", Toast.LENGTH_SHORT).show()
+                   // Toast.makeText(this, "所有申请的权限都已通过", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "您拒绝了如下权限：$deniedList", Toast.LENGTH_SHORT).show()
+                   // Toast.makeText(this, "您拒绝了如下权限：$deniedList", Toast.LENGTH_SHORT).show()
                 }
 
                 showServiceAgreement()
@@ -64,6 +82,7 @@ class MainActivity : SupportActivity() {
 
     private fun showServiceAgreement() {
         XPopup.Builder(this)
+            .dismissOnTouchOutside(false)
             .asCustom(
                 ServiceAgreementDialog(this)
                     .onConfirmClick {
