@@ -35,7 +35,7 @@
 负责管理各个业务组件，和打包apk，只有最简单的业务功能（主页面）或者没有具体的业务功能（壳工程），只负责编译打包工程。
 
 
-### 2、基于Kotlin协程的Retrofit + coroutine + LiveData + ViewModel的MVVM架构
+### 2、基于Kotlin协程的Retrofit + coroutine + LiveData + ViewModel的MVVM架构模型
 
 ![架构](https://img-blog.csdnimg.cn/20210109214622569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lhbmd3dTAwNw==,size_16,color_FFFFFF,t_70#pic_center)
 
